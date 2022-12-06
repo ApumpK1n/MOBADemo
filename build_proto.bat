@@ -2,7 +2,7 @@
 
 @echo off
 
-set TOOl_PATH=./Protocol/tool/protoc-21.10-win64/bin/protoc.exe
+set TOOl_PATH=./Protocol/tool/protoc-3.15.8-win64/bin/protoc.exe
 set IMPORT_PATH=./Protocol/proto/
 set DST_DIR=./Unity/Assets/Scripts/Proto/
 
