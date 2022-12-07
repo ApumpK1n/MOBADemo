@@ -34,6 +34,7 @@ public class GameInit : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        m_UIModule.SetUIRoot(UIRoot);
         m_UIModule.ShowUI<UILogin>(false, false);
     }
 
