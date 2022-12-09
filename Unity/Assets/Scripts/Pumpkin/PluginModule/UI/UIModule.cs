@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NFSDK;
 
 namespace Pumpkin
 {
-    public class UIModule : Module
+    public class UIModule : NFIModule
     {
         private Dictionary<string, UIDialog> m_AllDialogs;
         private Queue<UIDialog> m_HistoryDialogs;
         private UIDialog m_CurrentDialog;
         private Transform m_Root;
 
-        public UIModule(PluginManager pluginManager)
+        public UIModule(NFIPluginManager pluginManager)
         {
             m_AllDialogs = new Dictionary<string, UIDialog>();
             m_HistoryDialogs = new Queue<UIDialog>();
 
-            m_PluginManager = pluginManager;
+            mPluginManager = pluginManager;
         }
 
         public override void Awake()
@@ -62,7 +63,7 @@ namespace Pumpkin
                 if (m_Root != null) go.transform.SetParent(m_Root, false);
 
                 ui = go.GetComponent<T>();
-                ui.OnInit();
+                ui.OnLoad();
                 m_AllDialogs.Add(name, ui);
             }
             else

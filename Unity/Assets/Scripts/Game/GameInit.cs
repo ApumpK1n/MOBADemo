@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pumpkin;
+using NFSDK;
 
 public class GameInit : MonoBehaviour
 {
     public Transform UIRoot;
     public static GameInit Instance => s_Instance;
+    public NFPluginManager PluginManager => m_PluginManager;
 
-    private PluginManager m_PluginManager;
+    private NFPluginManager m_PluginManager;
 
     private static GameInit s_Instance;
 
@@ -16,7 +18,7 @@ public class GameInit : MonoBehaviour
 
     private void Awake()
     {
-        m_PluginManager = new PluginManager();
+        m_PluginManager = new NFPluginManager();
 
         s_Instance = this;
     }
@@ -24,6 +26,8 @@ public class GameInit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        m_PluginManager.Registered(new NFSDKPlugin(m_PluginManager));
         m_PluginManager.Registered(new UIPlugin(m_PluginManager));
 
         m_PluginManager.Awake();
@@ -48,6 +52,6 @@ public class GameInit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        m_PluginManager.Execute();
     }
 }

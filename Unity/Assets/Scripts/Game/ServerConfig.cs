@@ -55,13 +55,13 @@ public class ServerConfig
         return m_ServerList;
     }
 
-    public bool GetSelectServer(int n, ref string strIP)
+    public bool GetSelectServer(int n, ref Server server)
     {
         List<Server> serverList = GetServerList();
         if (n >= 0 && n < serverList.Count)
         {
             Server strData = (Server)serverList[n];
-            strIP = strData.strIP;
+            server = strData;
 
             return true;
         }

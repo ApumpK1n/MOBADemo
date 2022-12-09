@@ -6,13 +6,21 @@ namespace Pumpkin
 {
     public class UIDialog : MonoBehaviour
     {
+        public enum UIState
+        {
+            NotLoad,
+            Load,
+
+        }
+
+        protected UIState CurrentState = UIState.NotLoad;
 
         /// <summary>
         /// 资源首次加载完成后回调
         /// </summary>
-        public virtual void OnInit()
+        public virtual void OnLoad()
         {
-
+            CurrentState = UIState.Load;
         }
 
         /// <summary>

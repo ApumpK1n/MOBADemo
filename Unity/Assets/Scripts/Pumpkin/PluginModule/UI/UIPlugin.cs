@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using NFSDK;
 
 namespace Pumpkin
 {
-    public class UIPlugin : Plugin
+    public class UIPlugin : NFIPlugin
     {
-        public UIPlugin(PluginManager pluginManager)
+        public UIPlugin(NFIPluginManager pluginManager)
         {
-            m_PluginManager = pluginManager;
+            mPluginManager = pluginManager;
         }
 
         public override string GetPluginName()
@@ -17,14 +18,14 @@ namespace Pumpkin
 
         public override void Install()
         {
-            AddModule<UIModule>(new UIModule(m_PluginManager));
+            AddModule<UIModule>(new UIModule(mPluginManager));
         }
 
         public override void Uninstall()
         {
-            m_PluginManager.RemoveModule<UIModule>();
+            mPluginManager.RemoveModule<UIModule>();
 
-            m_Modules.Clear();
+            mModules.Clear();
         }
     }
 }
