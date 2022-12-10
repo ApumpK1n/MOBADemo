@@ -9,6 +9,8 @@ namespace Pumpkin
     {
         private Dictionary<string, UIDialog> m_AllDialogs;
         private Queue<UIDialog> m_HistoryDialogs;
+        private HashSet<UIDialog> m_ReadyToShow;
+
         private UIDialog m_CurrentDialog;
         private Transform m_Root;
 
@@ -35,6 +37,7 @@ namespace Pumpkin
 
         public override void Execute()
         {
+
         }
 
         public override void BeforeShut()
@@ -52,11 +55,11 @@ namespace Pumpkin
 
         public T ShowUI<T>(bool bCloseLastOne = true, bool bPushHistory = true) where T : UIDialog
         {
-
+            // TODO 解决同一帧类多次打开界面的请求用队列处理
             string name = typeof(T).ToString();
             if (!m_AllDialogs.TryGetValue(name, out UIDialog ui))
             {
-                // 替换成其他的
+                // 替换成其他的资源方案
                 GameObject prefab = Resources.Load<GameObject>("UI/" + name);
                 GameObject go = GameObject.Instantiate(prefab);
                 go.name = name;
@@ -66,11 +69,10 @@ namespace Pumpkin
                 ui.OnLoad();
                 m_AllDialogs.Add(name, ui);
             }
-            else
-            {
-                ui.gameObject.SetActive(true);
-                ui.OnShow();
-            }
+
+            //m_ReadyToShow.Add(ui);
+            ui.gameObject.SetActive(true);
+            ui.OnShow();
 
             m_CurrentDialog = ui;
 
@@ -79,6 +81,21 @@ namespace Pumpkin
                 m_HistoryDialogs.Enqueue(ui);
             }
             return (T)ui;
+        }
+
+        public bool CloseUI<T>() where T : UIDialog
+        {
+            string name = typeof(T).ToString();
+            if (!m_AllDialogs.TryGetValue(name, out UIDialog ui))
+            {
+                Debug.LogError($"UIModule CloseUI {name} not open!");
+                return false;
+            }
+
+            ui.OnHide();
+            ui.gameObject.SetActive(false);
+
+            return true;
         }
     }
 }
