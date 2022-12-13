@@ -3,97 +3,100 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ServerConfig
+namespace Pumpkin
 {
-    public struct Server
+    public class ServerConfig
     {
-        public string strIP;
-        public string strName;
-        public int nPort;
-    }
-
-    private XmlDocument xmldoc = null;
-    private XmlNode root = null;
-
-    private List<Server> m_ServerList = null;
-
-    public void Load()
-    {
-        TextAsset textAsset = (TextAsset)Resources.Load("ServerConfig");
-
-        XmlDocument xmldoc = new XmlDocument();
-        xmldoc.LoadXml(textAsset.text);
-
-        root = xmldoc.SelectSingleNode("XML");
-    }
-
-    public List<Server> GetServerList()
-    {
-        if (null == m_ServerList)
+        public struct Server
         {
-            m_ServerList = new List<Server>();
+            public string strIP;
+            public string strName;
+            public int nPort;
+        }
 
-            XmlNode node = root.SelectSingleNode("Servers");
+        private XmlDocument xmldoc = null;
+        private XmlNode root = null;
 
-            XmlNodeList nodeList = node.SelectNodes("Server");
-            for (int i = 0; i < nodeList.Count; ++i)
+        private List<Server> m_ServerList = null;
+
+        public void Load()
+        {
+            TextAsset textAsset = (TextAsset)Resources.Load("ServerConfig");
+
+            XmlDocument xmldoc = new XmlDocument();
+            xmldoc.LoadXml(textAsset.text);
+
+            root = xmldoc.SelectSingleNode("XML");
+        }
+
+        public List<Server> GetServerList()
+        {
+            if (null == m_ServerList)
             {
-                XmlNode nodeServer = nodeList.Item(i);
-                XmlAttribute strIP = nodeServer.Attributes["IP"];
-                XmlAttribute strName = nodeServer.Attributes["Name"];
-                XmlAttribute strPort = nodeServer.Attributes["Port"];
+                m_ServerList = new List<Server>();
 
-                Server server = new Server();
-                server.strIP = strIP.Value;
-                server.nPort = int.Parse(strPort.Value);
-                server.strName = strName.Value;
+                XmlNode node = root.SelectSingleNode("Servers");
 
-                m_ServerList.Add(server);
+                XmlNodeList nodeList = node.SelectNodes("Server");
+                for (int i = 0; i < nodeList.Count; ++i)
+                {
+                    XmlNode nodeServer = nodeList.Item(i);
+                    XmlAttribute strIP = nodeServer.Attributes["IP"];
+                    XmlAttribute strName = nodeServer.Attributes["Name"];
+                    XmlAttribute strPort = nodeServer.Attributes["Port"];
+
+                    Server server = new Server();
+                    server.strIP = strIP.Value;
+                    server.nPort = int.Parse(strPort.Value);
+                    server.strName = strName.Value;
+
+                    m_ServerList.Add(server);
+                }
             }
+
+            return m_ServerList;
         }
 
-        return m_ServerList;
-    }
-
-    public bool GetSelectServer(int n, ref Server server)
-    {
-        List<Server> serverList = GetServerList();
-        if (n >= 0 && n < serverList.Count)
+        public bool GetSelectServer(int n, ref Server server)
         {
-            Server strData = (Server)serverList[n];
-            server = strData;
+            List<Server> serverList = GetServerList();
+            if (n >= 0 && n < serverList.Count)
+            {
+                Server strData = (Server)serverList[n];
+                server = strData;
 
-            return true;
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
-    }
-
-    public bool GetSelectServer(ref string strIP)
-    {
-        //if (Application.platform == RuntimePlatform.IPhonePlayer)
-        //{
-        //    strIP = "192.168.1.41";
-        //    return true;
-        //}
-
-        List<Server> serverList = GetServerList();
-        if (null != serverList && serverList.Count > 0)
+        public bool GetSelectServer(ref string strIP)
         {
-            Server strData = serverList[0];
-            strIP = strData.strIP;
+            //if (Application.platform == RuntimePlatform.IPhonePlayer)
+            //{
+            //    strIP = "192.168.1.41";
+            //    return true;
+            //}
 
-            return true;
+            List<Server> serverList = GetServerList();
+            if (null != serverList && serverList.Count > 0)
+            {
+                Server strData = serverList[0];
+                strIP = strData.strIP;
+
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
-    }
+        public string GetDataPath()
+        {
+            XmlNode node = root.SelectSingleNode("Evironment");
 
-    public string GetDataPath()
-    {
-        XmlNode node = root.SelectSingleNode("Evironment");
-
-        XmlNode nodeDataPath = node.SelectSingleNode("DataPath");
-        return nodeDataPath.Attributes["ID"].Value;
+            XmlNode nodeDataPath = node.SelectSingleNode("DataPath");
+            return nodeDataPath.Attributes["ID"].Value;
+        }
     }
 }

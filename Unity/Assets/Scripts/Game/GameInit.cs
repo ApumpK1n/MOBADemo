@@ -4,54 +4,58 @@ using UnityEngine;
 using Pumpkin;
 using NFSDK;
 
-public class GameInit : MonoBehaviour
+namespace Pumpkin
 {
-    public Transform UIRoot;
-    public static GameInit Instance => s_Instance;
-    public NFPluginManager PluginManager => m_PluginManager;
-
-    private NFPluginManager m_PluginManager;
-
-    private static GameInit s_Instance;
-
-    private UIModule m_UIModule;
-
-    private void Awake()
+    public class GameInit : MonoBehaviour
     {
-        m_PluginManager = new NFPluginManager();
+        public Transform UIRoot;
+        public static GameInit Instance => s_Instance;
+        public NFPluginManager PluginManager => m_PluginManager;
 
-        s_Instance = this;
+        private NFPluginManager m_PluginManager;
+
+        private static GameInit s_Instance;
+
+        private UIModule m_UIModule;
+
+        private void Awake()
+        {
+            m_PluginManager = new NFPluginManager();
+
+            s_Instance = this;
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
+
+            m_PluginManager.Registered(new NFSDKPlugin(m_PluginManager));
+            m_PluginManager.Registered(new UIPlugin(m_PluginManager));
+
+            m_PluginManager.Awake();
+            m_PluginManager.Init();
+            m_PluginManager.AfterInit();
+
+            m_UIModule = m_PluginManager.FindModule<UIModule>();
+
+            DontDestroyOnLoad(gameObject);
+
+            m_UIModule.SetUIRoot(UIRoot);
+            m_UIModule.ShowUI<UILogin>(false, false);
+        }
+
+        void OnDestroy()
+        {
+            m_PluginManager.BeforeShut();
+            m_PluginManager.Shut();
+            m_PluginManager = null;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            m_PluginManager.Execute();
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        m_PluginManager.Registered(new NFSDKPlugin(m_PluginManager));
-        m_PluginManager.Registered(new UIPlugin(m_PluginManager));
-
-        m_PluginManager.Awake();
-        m_PluginManager.Init();
-        m_PluginManager.AfterInit();
-
-        m_UIModule = m_PluginManager.FindModule<UIModule>();
-
-        DontDestroyOnLoad(gameObject);
-
-        m_UIModule.SetUIRoot(UIRoot);
-        m_UIModule.ShowUI<UILogin>(false, false);
-    }
-
-    void OnDestroy()
-    {
-        m_PluginManager.BeforeShut();
-        m_PluginManager.Shut();
-        m_PluginManager = null;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        m_PluginManager.Execute();
-    }
 }

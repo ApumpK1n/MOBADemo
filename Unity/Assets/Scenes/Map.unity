@@ -10930,8 +10930,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2146423295}
   - component: {fileID: 2146423297}
-  - component: {fileID: 2146423298}
-  - component: {fileID: 2146423296}
   m_Layer: 7
   m_Name: Map
   m_TagString: NavMesh
@@ -11061,20 +11059,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2146423296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146423294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9684107a6bbf527448e1e838de42513a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CustomTag: Map
-  BelongToUnitId: 0
 --- !u!65 &2146423297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11088,16 +11072,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 0.23, z: 100}
   m_Center: {x: -50, y: -0.57, z: -50}
---- !u!114 &2146423298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146423294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb6abbfdeb65e5748bed4ac86534e3a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: []
