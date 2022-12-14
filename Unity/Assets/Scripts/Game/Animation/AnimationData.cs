@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace Pumpkin
 {
-    public struct AnimationClipData
+    [Serializable]
+    public class AnimationClipData
     {
         public AnimationStateType Type;
-        public AnimationClip Clip;
+        public List<AnimationClip> Clips;
     }
 
     public class AnimationData : MonoBehaviour

@@ -192,8 +192,7 @@ ModelImporter:
     - name: L_BuffBone_Glb_Foot_Loc
       parentName: L_Knee
       position: {x: -0.00000015974044, y: 0.27650818, z: 0.000000095367426}
-      rotation: {x: 0.00000006705522, y: 0.000000057916616, z: 0.000000018313584,
-        w: 1}
+      rotation: {x: 0.00000006705522, y: 0.000000057916616, z: 0.000000018313584, w: 1}
       scale: {x: 0.9999999, y: 1.0000001, z: 1.0000002}
     - name: L_BuffBone_Glb_Foot_Loc_end
       parentName: L_BuffBone_Glb_Foot_Loc
@@ -223,8 +222,7 @@ ModelImporter:
     - name: front_cloth_5
       parentName: front_cloth_4
       position: {x: -0, y: 0.18945098, z: -0.00000017821789}
-      rotation: {x: -0.00000011175871, y: 0.000000017418643, z: 0.0000000030781848,
-        w: 1}
+      rotation: {x: -0.00000011175871, y: 0.000000017418643, z: 0.0000000030781848, w: 1}
       scale: {x: 1.0000005, y: 0.9999998, z: 1.0000002}
     - name: front_cloth_5_end
       parentName: front_cloth_5
@@ -319,8 +317,7 @@ ModelImporter:
     - name: L_Shoulderpad
       parentName: L_Shoulder
       position: {x: -0.06269794, y: 0.34985113, z: 0.026649036}
-      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: -0.000000029802322,
-        w: 1}
+      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: -0.000000029802322, w: 1}
       scale: {x: 0.9999997, y: 0.99999994, z: 0.99999976}
     - name: L_Shoulderpad_end
       parentName: L_Shoulderpad
@@ -330,8 +327,7 @@ ModelImporter:
     - name: L_Scapulapad
       parentName: L_Shoulder
       position: {x: -0.28933382, y: 0.12913744, z: -0.051051293}
-      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: -0.000000029802322,
-        w: 1}
+      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: -0.000000029802322, w: 1}
       scale: {x: 0.99999976, y: 1, z: 0.9999997}
     - name: L_Scapulapad_end
       parentName: L_Scapulapad
@@ -416,8 +412,7 @@ ModelImporter:
     - name: L_Ring_2
       parentName: L_Ring_1
       position: {x: 0.00000004529953, y: 0.066474736, z: -0.0025694023}
-      rotation: {x: 0.00000014156102, y: 0.000000031664964, z: 0.000000029802319,
-        w: 1}
+      rotation: {x: 0.00000014156102, y: 0.000000031664964, z: 0.000000029802319, w: 1}
       scale: {x: 1, y: 1.0000002, z: 1}
     - name: L_Ring_2_end
       parentName: L_Ring_2
@@ -442,8 +437,7 @@ ModelImporter:
     - name: L_BuffBone_Glb_Hand_Loc
       parentName: L_ForeArm
       position: {x: 0.0000005102157, y: 0.22509548, z: 0.0000009822845}
-      rotation: {x: 0.000000056068522, y: 0.000000023059325, z: -0.0000001158797,
-        w: 1}
+      rotation: {x: 0.000000056068522, y: 0.000000023059325, z: -0.0000001158797, w: 1}
       scale: {x: 1.0000004, y: 1.0000004, z: 1.0000006}
     - name: L_BuffBone_Glb_Hand_Loc_end
       parentName: L_BuffBone_Glb_Hand_Loc
@@ -458,20 +452,17 @@ ModelImporter:
     - name: L_Cape_2
       parentName: L_Cape_1
       position: {x: -0, y: 0.2880144, z: 0.00000036239624}
-      rotation: {x: 0.000000007450581, y: -0.00000014901161, z: 0.0000000037252903,
-        w: 1}
+      rotation: {x: 0.000000007450581, y: -0.00000014901161, z: 0.0000000037252903, w: 1}
       scale: {x: 0.99999994, y: 0.9999998, z: 0.9999998}
     - name: L_Cape_3
       parentName: L_Cape_2
       position: {x: -0, y: 0.29091123, z: 0.00000043153761}
-      rotation: {x: -0.000000035390258, y: 0.000000013969839, z: 0.000000014901167,
-        w: 1}
+      rotation: {x: -0.000000035390258, y: 0.000000013969839, z: 0.000000014901167, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: L_Cape_4
       parentName: L_Cape_3
       position: {x: 0.00000008106232, y: 0.39374876, z: 0.00000059247014}
-      rotation: {x: 0.000000033527613, y: 0.000000015716068, z: -0.000000018626455,
-        w: 1}
+      rotation: {x: 0.000000033527613, y: 0.000000015716068, z: -0.000000018626455, w: 1}
       scale: {x: 1.0000001, y: 1, z: 0.99999994}
     - name: L_Cape_4_end
       parentName: L_Cape_4
@@ -491,8 +482,7 @@ ModelImporter:
     - name: C_Cape_3
       parentName: C_Cape_2
       position: {x: -0.0000000032782554, y: 0.3320424, z: -0.00000058352947}
-      rotation: {x: -1.7589169e-17, y: 0.0000000056006684, z: -0.000000003958121,
-        w: 1}
+      rotation: {x: -1.7589169e-17, y: 0.0000000056006684, z: -0.000000003958121, w: 1}
       scale: {x: 1, y: 0.9999999, z: 1}
     - name: C_Cape_4
       parentName: C_Cape_3
@@ -522,8 +512,7 @@ ModelImporter:
     - name: R_Scapulapad
       parentName: R_Shoulder
       position: {x: -0.3069714, y: 0.09361616, z: 0.0011875093}
-      rotation: {x: -0.000000029802319, y: 0.000000104308114, z: 0.0000002533197,
-        w: 1}
+      rotation: {x: -0.000000029802319, y: 0.000000104308114, z: 0.0000002533197, w: 1}
       scale: {x: 1.0000001, y: 1.0000004, z: 1}
     - name: R_Scapulapad_end
       parentName: R_Scapulapad
@@ -623,8 +612,7 @@ ModelImporter:
     - name: R_Pinky_2
       parentName: R_Pinky_1
       position: {x: -0.000000047683713, y: 0.04709919, z: -0.000000076293944}
-      rotation: {x: -0.00000014901156, y: -0.00000011920925, z: 0.00000010430809,
-        w: 1}
+      rotation: {x: -0.00000014901156, y: -0.00000011920925, z: 0.00000010430809, w: 1}
       scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     - name: R_Pinky_2_end
       parentName: R_Pinky_2
@@ -659,20 +647,17 @@ ModelImporter:
     - name: R_Cape_2
       parentName: R_Cape_1
       position: {x: -0.0000003004074, y: 0.28801605, z: -0.00000027418136}
-      rotation: {x: 0.000000086147345, y: 0.000000034342523, z: -0.000000026309865,
-        w: 1}
+      rotation: {x: 0.000000086147345, y: 0.000000034342523, z: -0.000000026309865, w: 1}
       scale: {x: 1.0000005, y: 1, z: 1.0000004}
     - name: R_Cape_3
       parentName: R_Cape_2
       position: {x: 0.000001039505, y: 0.29090422, z: -0.000001077652}
-      rotation: {x: -0.000000059138987, y: 0.00000002665911, z: 0.000000022351738,
-        w: 1}
+      rotation: {x: -0.000000059138987, y: 0.00000002665911, z: 0.000000022351738, w: 1}
       scale: {x: 1.0000005, y: 1.0000001, z: 1.0000007}
     - name: R_Cape_4
       parentName: R_Cape_3
       position: {x: -0.0000011444091, y: 0.39375135, z: -0.00000015258789}
-      rotation: {x: -0.000000030267987, y: 0.000000013504178, z: 0.0000000076834095,
-        w: 1}
+      rotation: {x: -0.000000030267987, y: 0.000000013504178, z: 0.0000000076834095, w: 1}
       scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
     - name: R_Cape_4_end
       parentName: R_Cape_4

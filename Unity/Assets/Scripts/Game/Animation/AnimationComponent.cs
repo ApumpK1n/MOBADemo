@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Pumpkin
 {
+    [RequireComponent(typeof(AnimancerComponent), typeof(AnimationData))]
     public class AnimationComponent : MonoBehaviour
     {
-        [SerializeField]
         private AnimancerComponent m_Animancer;
 
         private AnimationData m_AnimationData;
 
-        private Dictionary<AnimationStateType, AnimationClip> m_Clips = new Dictionary<AnimationStateType, AnimationClip>();
+        private Dictionary<AnimationStateType, List<AnimationClip>> m_Clips = new Dictionary<AnimationStateType, List<AnimationClip>>();
 
         private void Awake()
         {
@@ -24,11 +24,12 @@ namespace Pumpkin
         }
 
 
-        public bool PlayAnimation(AnimationStateType type)
+        public bool PlayAnimation(AnimationStateType type, int aniIndex=0)
         {
-            if (m_Clips.TryGetValue(type, out AnimationClip animationClip))
+            if (m_Clips.TryGetValue(type, out List<AnimationClip> animationClips))
             {
-                m_Animancer.Play(animationClip);
+                if (animationClips.Count <= aniIndex) return false;
+                m_Animancer.Play(animationClips[aniIndex]);
                 return true;
             }
             return false;
@@ -39,7 +40,7 @@ namespace Pumpkin
         {
             foreach (var clipData in m_AnimationData.AnimationClips)
             {
-                m_Clips.Add(clipData.Type, clipData.Clip);
+                m_Clips.Add(clipData.Type, clipData.Clips);
             }
 
         }
