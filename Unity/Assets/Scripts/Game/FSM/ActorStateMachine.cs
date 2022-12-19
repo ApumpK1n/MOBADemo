@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pumpkin
 {
-    public enum HeroStateType
+    public enum ActorStateType
     {
         Idle = 0,
         Death = 1,
-        Run = 2,
+        Run = 2, // 导航
         Crit = 3, // 暴击
         Dance = 4,
         Laugh = 5,
@@ -19,22 +19,22 @@ namespace Pumpkin
         Perform = 11, // 施法
     }
 
-    public partial class HeroStateMachine : MonoBehaviour
+    public partial class ActorStateMachine : MonoBehaviour
     {
-        public HeroStateType CurrentStateID => m_StateMachine.CurrentStateID;
+        public ActorStateType CurrentStateID => m_StateMachine.CurrentStateID;
 
-        private StateMachine<HeroStateType> m_StateMachine;
+        private StateMachine<ActorStateType> m_StateMachine;
 
         private void Awake()
         {
-            var stateList = new List<State<HeroStateType>>
+            var stateList = new List<State<ActorStateType>>
             {
-                new HeroIdleState<HeroStateType>(HeroStateType.Idle, this),
+                new HeroIdleState<ActorStateType>(ActorStateType.Idle, this),
             };
-            m_StateMachine = new StateMachine<HeroStateType>(stateList.ToArray(), HeroStateType.Idle);
+            m_StateMachine = new StateMachine<ActorStateType>(stateList.ToArray(), ActorStateType.Idle);
         }
 
-        public void ChangeState(HeroStateType heroStateType)
+        public void ChangeState(ActorStateType heroStateType)
         {
             m_StateMachine.ChangeState(heroStateType);
         }

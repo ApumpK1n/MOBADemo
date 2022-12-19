@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 191060579}
   - component: {fileID: 191060578}
   - component: {fileID: 191060577}
+  - component: {fileID: 191060580}
   m_Layer: 11
   m_Name: arena01_road_wall_outside01_a
   m_TagString: NavMesh
@@ -702,6 +703,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &191060580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191060576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!4 &212947672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2590273262378949447, guid: 1bb9c5a300beef947919be4a7a71b46d, type: 3}
@@ -963,6 +980,7 @@ GameObject:
   - component: {fileID: 233691751}
   - component: {fileID: 233691750}
   - component: {fileID: 233691749}
+  - component: {fileID: 233691752}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_001
   m_TagString: Untagged
@@ -1033,6 +1051,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233691752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233691748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &234638591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,6 +1342,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &273538053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273538054}
+  m_Layer: 0
+  m_Name: NavMeshModifyVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &273538054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273538053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -102.669815, y: 19.578041, z: -99.587166}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1539079018}
+  - {fileID: 565712602}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &288392204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,6 +1385,7 @@ GameObject:
   - component: {fileID: 288392207}
   - component: {fileID: 288392206}
   - component: {fileID: 288392205}
+  - component: {fileID: 288392208}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_021
   m_TagString: Untagged
@@ -1389,6 +1456,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288392208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288392204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &300543062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1564,7 @@ GameObject:
   - component: {fileID: 310371120}
   - component: {fileID: 310371119}
   - component: {fileID: 310371118}
+  - component: {fileID: 310371121}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_018
   m_TagString: Untagged
@@ -1551,6 +1635,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310371121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310371117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &399380549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,6 +1662,7 @@ GameObject:
   - component: {fileID: 399380552}
   - component: {fileID: 399380551}
   - component: {fileID: 399380550}
+  - component: {fileID: 399380553}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_019
   m_TagString: Untagged
@@ -1632,6 +1733,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399380553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399380549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &408309453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1841,7 @@ GameObject:
   - component: {fileID: 424429149}
   - component: {fileID: 424429148}
   - component: {fileID: 424429147}
+  - component: {fileID: 424429150}
   m_Layer: 11
   m_Name: arena01_bluebuff001_right_newlayout
   m_TagString: NavMesh
@@ -1794,6 +1912,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &424429150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424429146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &435958782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,6 +2020,7 @@ GameObject:
   - component: {fileID: 437758197}
   - component: {fileID: 437758196}
   - component: {fileID: 437758195}
+  - component: {fileID: 437758198}
   m_Layer: 11
   m_Name: arena01_road_wall_outside_a
   m_TagString: NavMesh
@@ -1956,6 +2091,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &437758198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437758194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &441597399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2635,7 @@ GameObject:
   - component: {fileID: 505579130}
   - component: {fileID: 505579129}
   - component: {fileID: 505579128}
+  - component: {fileID: 505579131}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_011
   m_TagString: Untagged
@@ -2554,6 +2706,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505579131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505579127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &513706069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,6 +2733,7 @@ GameObject:
   - component: {fileID: 513706072}
   - component: {fileID: 513706071}
   - component: {fileID: 513706070}
+  - component: {fileID: 513706073}
   m_Layer: 11
   m_Name: arena01_redbuff005_up_lod
   m_TagString: NavMesh
@@ -2635,6 +2804,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513706073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513706069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &530581631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,6 +2831,7 @@ GameObject:
   - component: {fileID: 530581634}
   - component: {fileID: 530581633}
   - component: {fileID: 530581632}
+  - component: {fileID: 530581635}
   m_Layer: 11
   m_Name: arena01_redbuff005
   m_TagString: NavMesh
@@ -2716,6 +2902,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &530581635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530581631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &535671756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2929,7 @@ GameObject:
   - component: {fileID: 535671759}
   - component: {fileID: 535671758}
   - component: {fileID: 535671757}
+  - component: {fileID: 535671760}
   m_Layer: 11
   m_Name: arena01_road_wall_outside
   m_TagString: NavMesh
@@ -2797,6 +3000,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535671760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535671756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &545617968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,6 +3178,53 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &565712601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 565712602}
+  - component: {fileID: 565712603}
+  m_Layer: 0
+  m_Name: Born1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &565712602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565712601}
+  m_LocalRotation: {x: 0.0004643074, y: -0.0016718338, z: -0.0016879734, w: 0.9999971}
+  m_LocalPosition: {x: 107.72, y: -16.47, z: 92.98}
+  m_LocalScale: {x: 4.4461427, y: 2.1454, z: 4.624548}
+  m_Children: []
+  m_Father: {fileID: 273538054}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0.053, y: -0.192, z: -0.194}
+--- !u!114 &565712603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565712601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &577604458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,6 +3647,7 @@ GameObject:
   - component: {fileID: 686109785}
   - component: {fileID: 686109784}
   - component: {fileID: 686109783}
+  - component: {fileID: 686109786}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_017
   m_TagString: Untagged
@@ -3451,6 +3718,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686109786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686109782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &696226695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3458,6 +3741,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 491923359}
     m_Modifications:
+    - target: {fileID: 1233075252264562561, guid: 1bb9c5a300beef947919be4a7a71b46d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2590273262378949440, guid: 1bb9c5a300beef947919be4a7a71b46d, type: 3}
       propertyPath: m_Name
       value: Darius
@@ -3506,7 +3793,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8839734782470378473, guid: 1bb9c5a300beef947919be4a7a71b46d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1bb9c5a300beef947919be4a7a71b46d, type: 3}
 --- !u!1 &700592780
 GameObject:
@@ -3600,6 +3888,7 @@ GameObject:
   - component: {fileID: 706075464}
   - component: {fileID: 706075463}
   - component: {fileID: 706075462}
+  - component: {fileID: 706075465}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_003
   m_TagString: Untagged
@@ -3670,6 +3959,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706075465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706075461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &732326274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,6 +3986,7 @@ GameObject:
   - component: {fileID: 732326277}
   - component: {fileID: 732326276}
   - component: {fileID: 732326275}
+  - component: {fileID: 732326278}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_008
   m_TagString: Untagged
@@ -3751,6 +4057,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &732326278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732326274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &759312894
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,6 +4657,7 @@ GameObject:
   - component: {fileID: 825112506}
   - component: {fileID: 825112505}
   - component: {fileID: 825112504}
+  - component: {fileID: 825112507}
   m_Layer: 11
   m_Name: arena01_road_wall_outside03_a
   m_TagString: NavMesh
@@ -4405,6 +4728,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &825112507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825112503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &849662258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,6 +5243,7 @@ GameObject:
   - component: {fileID: 910980408}
   - component: {fileID: 910980407}
   - component: {fileID: 910980406}
+  - component: {fileID: 910980409}
   m_Layer: 11
   m_Name: arena01_redbuff006_up
   m_TagString: NavMesh
@@ -4974,6 +5314,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910980409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910980405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &962536255
 GameObject:
   m_ObjectHideFlags: 0
@@ -5771,6 +6127,7 @@ GameObject:
   - component: {fileID: 1129758858}
   - component: {fileID: 1129758857}
   - component: {fileID: 1129758856}
+  - component: {fileID: 1129758859}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_020
   m_TagString: Untagged
@@ -5841,6 +6198,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129758859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129758855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1171687112
 GameObject:
   m_ObjectHideFlags: 0
@@ -6585,6 +6958,7 @@ GameObject:
   - component: {fileID: 1313283129}
   - component: {fileID: 1313283128}
   - component: {fileID: 1313283127}
+  - component: {fileID: 1313283130}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_012
   m_TagString: Untagged
@@ -6655,6 +7029,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313283130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313283126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1334836151
 GameObject:
   m_ObjectHideFlags: 0
@@ -6747,6 +7137,7 @@ GameObject:
   - component: {fileID: 1338629383}
   - component: {fileID: 1338629382}
   - component: {fileID: 1338629381}
+  - component: {fileID: 1338629384}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_002
   m_TagString: Untagged
@@ -6817,6 +7208,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1338629384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338629380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1339688202
 GameObject:
   m_ObjectHideFlags: 0
@@ -6828,6 +7235,7 @@ GameObject:
   - component: {fileID: 1339688205}
   - component: {fileID: 1339688204}
   - component: {fileID: 1339688203}
+  - component: {fileID: 1339688206}
   m_Layer: 11
   m_Name: arena01_road_wall_outside02_a
   m_TagString: NavMesh
@@ -6898,6 +7306,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1339688206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339688202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1378398226
 GameObject:
   m_ObjectHideFlags: 0
@@ -6990,6 +7414,7 @@ GameObject:
   - component: {fileID: 1392917008}
   - component: {fileID: 1392917007}
   - component: {fileID: 1392917006}
+  - component: {fileID: 1392917009}
   m_Layer: 11
   m_Name: arena01_road_wall_outside02
   m_TagString: NavMesh
@@ -7060,6 +7485,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1392917009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392917005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1401026067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,6 +7593,7 @@ GameObject:
   - component: {fileID: 1425044706}
   - component: {fileID: 1425044705}
   - component: {fileID: 1425044704}
+  - component: {fileID: 1425044707}
   m_Layer: 11
   m_Name: arena01_redbuff002_up
   m_TagString: NavMesh
@@ -7222,6 +7664,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425044707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425044703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1430693654
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,6 +7691,7 @@ GameObject:
   - component: {fileID: 1430693657}
   - component: {fileID: 1430693656}
   - component: {fileID: 1430693655}
+  - component: {fileID: 1430693658}
   m_Layer: 11
   m_Name: arena01_bluebuff002_newlayout
   m_TagString: NavMesh
@@ -7303,6 +7762,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430693658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430693654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1432702556
 GameObject:
   m_ObjectHideFlags: 0
@@ -7476,6 +7951,7 @@ GameObject:
   - component: {fileID: 1446565078}
   - component: {fileID: 1446565077}
   - component: {fileID: 1446565076}
+  - component: {fileID: 1446565079}
   m_Layer: 11
   m_Name: arena01_road_wall_outside03
   m_TagString: NavMesh
@@ -7546,6 +8022,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1446565079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446565075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1463166923
 GameObject:
   m_ObjectHideFlags: 0
@@ -7557,6 +8049,7 @@ GameObject:
   - component: {fileID: 1463166926}
   - component: {fileID: 1463166925}
   - component: {fileID: 1463166924}
+  - component: {fileID: 1463166927}
   m_Layer: 11
   m_Name: arena01_bluebuff001_newlayout
   m_TagString: NavMesh
@@ -7627,6 +8120,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463166927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463166923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1477764900
 GameObject:
   m_ObjectHideFlags: 0
@@ -7962,6 +8471,7 @@ GameObject:
   - component: {fileID: 1504636520}
   - component: {fileID: 1504636519}
   - component: {fileID: 1504636518}
+  - component: {fileID: 1504636521}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_013
   m_TagString: Untagged
@@ -8032,6 +8542,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1504636521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504636517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1512005918
 GameObject:
   m_ObjectHideFlags: 0
@@ -8194,6 +8720,53 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1539079017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1539079018}
+  - component: {fileID: 1539079019}
+  m_Layer: 0
+  m_Name: Born1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1539079018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539079017}
+  m_LocalRotation: {x: 0.000055251392, y: -0.0002738972, z: -0.00040041085, w: 0.9999999}
+  m_LocalPosition: {x: 9.18, y: -14.61, z: -4.8799973}
+  m_LocalScale: {x: 4.7317605, y: 1.888, z: 3.0044}
+  m_Children: []
+  m_Father: {fileID: 273538054}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.006, y: -0.031, z: -0.046}
+--- !u!114 &1539079019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539079017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1548068880
 GameObject:
   m_ObjectHideFlags: 0
@@ -8205,6 +8778,7 @@ GameObject:
   - component: {fileID: 1548068883}
   - component: {fileID: 1548068882}
   - component: {fileID: 1548068881}
+  - component: {fileID: 1548068884}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_015
   m_TagString: Untagged
@@ -8275,6 +8849,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1548068884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548068880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1563451822
 GameObject:
   m_ObjectHideFlags: 0
@@ -8367,6 +8957,7 @@ GameObject:
   - component: {fileID: 1566753295}
   - component: {fileID: 1566753294}
   - component: {fileID: 1566753293}
+  - component: {fileID: 1566753296}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_022
   m_TagString: Untagged
@@ -8437,6 +9028,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566753296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566753292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1573489469
 GameObject:
   m_ObjectHideFlags: 0
@@ -8448,6 +9055,7 @@ GameObject:
   - component: {fileID: 1573489472}
   - component: {fileID: 1573489471}
   - component: {fileID: 1573489470}
+  - component: {fileID: 1573489473}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_009
   m_TagString: Untagged
@@ -8518,6 +9126,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1573489473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573489469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1601045561
 GameObject:
   m_ObjectHideFlags: 0
@@ -8693,6 +9317,7 @@ GameObject:
   - component: {fileID: 1614722417}
   - component: {fileID: 1614722416}
   - component: {fileID: 1614722415}
+  - component: {fileID: 1614722418}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_016
   m_TagString: Untagged
@@ -8763,6 +9388,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1614722418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614722414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1616182737
 GameObject:
   m_ObjectHideFlags: 0
@@ -9777,6 +10418,7 @@ GameObject:
   - component: {fileID: 1801541578}
   - component: {fileID: 1801541577}
   - component: {fileID: 1801541576}
+  - component: {fileID: 1801541579}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_010
   m_TagString: Untagged
@@ -9847,6 +10489,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801541579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801541575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1814494040
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,6 +10516,7 @@ GameObject:
   - component: {fileID: 1814494043}
   - component: {fileID: 1814494042}
   - component: {fileID: 1814494041}
+  - component: {fileID: 1814494044}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_006
   m_TagString: Untagged
@@ -9928,6 +10587,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814494044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814494040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1818444569
 GameObject:
   m_ObjectHideFlags: 0
@@ -10101,6 +10776,7 @@ GameObject:
   - component: {fileID: 1834789176}
   - component: {fileID: 1834789175}
   - component: {fileID: 1834789174}
+  - component: {fileID: 1834789177}
   m_Layer: 11
   m_Name: arena01_road_wall_outside01
   m_TagString: NavMesh
@@ -10171,6 +10847,22 @@ Transform:
   m_Father: {fileID: 2146423295}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1834789177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834789173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1838961890
 GameObject:
   m_ObjectHideFlags: 0
@@ -10265,6 +10957,7 @@ GameObject:
   - component: {fileID: 1855765258}
   - component: {fileID: 1855765257}
   - component: {fileID: 1855765256}
+  - component: {fileID: 1855765259}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_014
   m_TagString: Untagged
@@ -10335,6 +11028,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1855765259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855765255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1862816095
 GameObject:
   m_ObjectHideFlags: 0
@@ -10591,6 +11300,7 @@ GameObject:
   - component: {fileID: 1917503558}
   - component: {fileID: 1917503557}
   - component: {fileID: 1917503556}
+  - component: {fileID: 1917503559}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_005
   m_TagString: Untagged
@@ -10661,6 +11371,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1917503559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917503555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2026076880
 GameObject:
   m_ObjectHideFlags: 0
@@ -10672,6 +11398,7 @@ GameObject:
   - component: {fileID: 2026076883}
   - component: {fileID: 2026076882}
   - component: {fileID: 2026076881}
+  - component: {fileID: 2026076884}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_007
   m_TagString: Untagged
@@ -10742,6 +11469,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026076884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026076880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2030335943
 GameObject:
   m_ObjectHideFlags: 0
@@ -11081,6 +11824,7 @@ GameObject:
   - component: {fileID: 2128567892}
   - component: {fileID: 2128567891}
   - component: {fileID: 2128567890}
+  - component: {fileID: 2128567893}
   m_Layer: 0
   m_Name: arena01_grass_newlayout_high_004
   m_TagString: Untagged
@@ -11151,6 +11895,22 @@ Transform:
   m_Father: {fileID: 993576980}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128567893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128567889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2146423294
 GameObject:
   m_ObjectHideFlags: 0
@@ -11161,6 +11921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146423295}
   - component: {fileID: 2146423297}
+  - component: {fileID: 2146423296}
   m_Layer: 7
   m_Name: Map
   m_TagString: NavMesh
@@ -11290,6 +12051,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146423296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146423294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 47f9945475968f1439ee909b4fe3dc13, type: 2}
 --- !u!65 &2146423297
 BoxCollider:
   m_ObjectHideFlags: 0

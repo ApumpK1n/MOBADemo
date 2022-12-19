@@ -4,7 +4,9 @@ using System.Linq;
 
 namespace Pumpkin
 {
-    public class PlayAnimationAction
+    public abstract class Cmd
     {
+        public uint Frame;
+        public long ActorId;
     }
 }
