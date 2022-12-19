@@ -7,6 +7,7 @@ namespace Pumpkin
     public abstract class Cmd
     {
         public uint Frame;
+        public uint SyncCmdType;
         public long ActorId;
     }
 }

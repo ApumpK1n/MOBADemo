@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Pumpkin
 {
-    [CommandHandler]
+    [CommandHandler(CommandHandlerType = MoveCommand.CmdType)]
     public class MoveCmdHandler : Handler<MoveCommand>
     {
 

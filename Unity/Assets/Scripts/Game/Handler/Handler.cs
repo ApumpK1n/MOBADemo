@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Pumpkin
 {
-    public abstract class Handler<T> where T : Cmd
+    public abstract class Handler<T> : IHandler where T : Cmd
     {
 
-        public void Handle(T cmd)
+        public void Handle(Cmd cmd)
         {
             if (cmd == null)
             {
