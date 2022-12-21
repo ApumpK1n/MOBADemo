@@ -191,7 +191,9 @@ namespace NFrame
 
             Debug.Log("SWAP_SCENE: " + xData.SceneId + " " + xData.X + "," + xData.Y + "," + xData.Z);
 
-            mEventModule.DoEvent((int)NFLoginModule.Event.SwapSceneSuccess);
+            NFDataList swap = new NFDataList();
+            swap.AddInt(xData.SceneId);
+            mEventModule.DoEvent((int)NFLoginModule.Event.SwapSceneSuccess, swap);
             /*
             NFMsg.AckMiningTitle xTileData = null;
             if (null != xData.Data && xData.Data.Length > 0)

@@ -60,7 +60,7 @@ namespace Pumpkin
             if (!m_AllDialogs.TryGetValue(name, out UIDialog ui))
             {
                 // 替换成其他的资源方案
-                GameObject prefab = Resources.Load<GameObject>("UI/" + name);
+                GameObject prefab = Resources.Load<GameObject>("UI/"+ name);
                 GameObject go = GameObject.Instantiate(prefab);
                 go.name = name;
                 if (m_Root != null) go.transform.SetParent(m_Root, false);

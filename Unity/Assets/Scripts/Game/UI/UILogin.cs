@@ -16,6 +16,7 @@ namespace Pumpkin
         public Dropdown m_ServerList;
         public Button m_Connect;
 
+
         private ServerConfig m_ServerConfig;
         private ServerConfig.Server m_CurrentServer;
         private NFNetModule m_NetModule;

@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 300897285713664796}
   - component: {fileID: 7026935876898597743}
   m_Layer: 5
-  m_Name: UILogin
+  m_Name: Pumpkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

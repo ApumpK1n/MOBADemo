@@ -23,17 +23,17 @@ namespace Pumpkin
             m_PluginManager = new NFPluginManager();
 
             s_Instance = this;
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
 
             m_PluginManager.Registered(new NFSDKPlugin(m_PluginManager));
             m_PluginManager.Registered(new UIPlugin(m_PluginManager));
 
             m_PluginManager.Awake();
             m_PluginManager.Init();
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
             m_PluginManager.AfterInit();
 
             m_UIModule = m_PluginManager.FindModule<UIModule>();

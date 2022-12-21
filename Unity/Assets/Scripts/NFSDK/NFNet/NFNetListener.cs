@@ -214,6 +214,8 @@ namespace NFSDK
             {
                 MsgDelegation myDelegationHandler = (MsgDelegation)mhtMsgDelegation[head.unMsgID];
 				ms.Position = 0;
+
+				Debug.Log("ReciveMsg:" + head.unMsgID);
 				myDelegationHandler(head.unMsgID, ms);
             }
             else
