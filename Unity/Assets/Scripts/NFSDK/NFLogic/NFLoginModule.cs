@@ -244,7 +244,7 @@ namespace NFrame
 			NFMsg.MsgBase xMsg = NFMsg.MsgBase.Parser.ParseFrom(stream);
             NFMsg.AckEventResult xData = NFMsg.AckEventResult.Parser.ParseFrom(xMsg.MsgData);
 
-            if (EGameEventCode.AccountSuccess == xData.EventCode)
+            if (EGameEventCode.AccountLoginSuccess == xData.EventCode)
             {
 				Debug.Log("Login  SUCCESS");
 				mEventModule.DoEvent((int)NFLoginModule.Event.LoginSuccess);

@@ -1,0 +1,10 @@
+syntax = "proto3";
+package Pumpkin;
+
+
+enum GameMsgID
+{
+    Unknow = 0;
+    // NoahGameFrame 会占用一部分
+    CreateRoom = 1000;
+}

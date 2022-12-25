@@ -84,12 +84,13 @@ namespace NFMsg {
             "cHJveHkYBCABKAUifgoMUm9sZURhdGFQYWNrEhgKAmlkGAEgASgLMgwuTkZN",
             "c2cuSWRlbnQSKwoIcHJvcGVydHkYAiABKAsyGS5ORk1zZy5PYmplY3RQcm9w",
             "ZXJ0eUxpc3QSJwoGcmVjb3JkGAMgASgLMhcuTkZNc2cuT2JqZWN0UmVjb3Jk",
-            "TGlzdCpaCgxFU2VydmVyU3RhdGUSDQoJRVNUX0NSQVNIEAASDgoKRVNUX05B",
-            "Uk1BTBABEgwKCEVTVF9CVVNZEAISDAoIRVNUX0ZJUkUQAxIPCgtFU1RfTUFJ",
-            "TlRFThAEKkoKCkVMb2dpbk1vZGUSDQoJRUxNX0xPR0lOEAASEAoMRUxNX1JF",
-            "R0lTVEVSEAESGwoXRUxNX0FVVE9fUkVHSVNURVJfTE9HSU4QAipAChFSZXFT",
-            "ZXJ2ZXJMaXN0VHlwZRIVChFSU0xUX1dPUkxEX1NFUlZFUhAAEhQKEFJTTFRf",
-            "R0FNRVNfRVJWRVIQAWIGcHJvdG8z"));
+            "TGlzdCIkCgpDcmVhdGVSb29tEhYKDkhvbGRlclBsYXllcklkGAEgASgJKloK",
+            "DEVTZXJ2ZXJTdGF0ZRINCglFU1RfQ1JBU0gQABIOCgpFU1RfTkFSTUFMEAES",
+            "DAoIRVNUX0JVU1kQAhIMCghFU1RfRklSRRADEg8KC0VTVF9NQUlOVEVOEAQq",
+            "SgoKRUxvZ2luTW9kZRINCglFTE1fTE9HSU4QABIQCgxFTE1fUkVHSVNURVIQ",
+            "ARIbChdFTE1fQVVUT19SRUdJU1RFUl9MT0dJThACKkAKEVJlcVNlcnZlckxp",
+            "c3RUeXBlEhUKEVJTTFRfV09STERfU0VSVkVSEAASFAoQUlNMVF9HQU1FU19F",
+            "UlZFUhABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NFMsg.NFDefineReflection.Descriptor, global::NFMsg.NFMsgBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NFMsg.EServerState), typeof(global::NFMsg.ELoginMode), typeof(global::NFMsg.ReqServerListType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -114,7 +115,8 @@ namespace NFMsg {
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ServerHeartBeat), global::NFMsg.ServerHeartBeat.Parser, new[]{ "Count" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleOnlineNotify), global::NFMsg.RoleOnlineNotify.Parser, new[]{ "Self", "Game", "Proxy", "Name", "Bp", "PropertyIntList", "PropertyFloatList", "PropertyStringList", "PropertyObjectList", "PropertyVector2List", "PropertyVector3List" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleOfflineNotify), global::NFMsg.RoleOfflineNotify.Parser, new[]{ "Self", "Clan", "Game", "Proxy" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleDataPack), global::NFMsg.RoleDataPack.Parser, new[]{ "Id", "Property", "Record" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleDataPack), global::NFMsg.RoleDataPack.Parser, new[]{ "Id", "Property", "Record" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.CreateRoom), global::NFMsg.CreateRoom.Parser, new[]{ "HolderPlayerId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -4942,6 +4944,135 @@ namespace NFMsg {
               Record = new global::NFMsg.ObjectRecordList();
             }
             input.ReadMessage(Record);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CreateRoom : pb::IMessage<CreateRoom> {
+    private static readonly pb::MessageParser<CreateRoom> _parser = new pb::MessageParser<CreateRoom>(() => new CreateRoom());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CreateRoom> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[22]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoom() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoom(CreateRoom other) : this() {
+      holderPlayerId_ = other.holderPlayerId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoom Clone() {
+      return new CreateRoom(this);
+    }
+
+    /// <summary>Field number for the "HolderPlayerId" field.</summary>
+    public const int HolderPlayerIdFieldNumber = 1;
+    private string holderPlayerId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HolderPlayerId {
+      get { return holderPlayerId_; }
+      set {
+        holderPlayerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CreateRoom);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CreateRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (HolderPlayerId != other.HolderPlayerId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (HolderPlayerId.Length != 0) hash ^= HolderPlayerId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (HolderPlayerId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(HolderPlayerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (HolderPlayerId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HolderPlayerId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CreateRoom other) {
+      if (other == null) {
+        return;
+      }
+      if (other.HolderPlayerId.Length != 0) {
+        HolderPlayerId = other.HolderPlayerId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            HolderPlayerId = input.ReadString();
             break;
           }
         }

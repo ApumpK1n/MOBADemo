@@ -115,6 +115,10 @@ class RoleDataPackDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RoleDataPack> _instance;
 } _RoleDataPack_default_instance_;
+class CreateRoomDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateRoom> _instance;
+} _CreateRoom_default_instance_;
 }  // namespace NFMsg
 static void InitDefaultsscc_info_AckConnectWorldResult_NFMsgPreGame_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -175,6 +179,20 @@ static void InitDefaultsscc_info_AckServerList_NFMsgPreGame_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AckServerList_NFMsgPreGame_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_AckServerList_NFMsgPreGame_2eproto}, {
       &scc_info_ServerInfo_NFMsgPreGame_2eproto.base,}};
+
+static void InitDefaultsscc_info_CreateRoom_NFMsgPreGame_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NFMsg::_CreateRoom_default_instance_;
+    new (ptr) ::NFMsg::CreateRoom();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NFMsg::CreateRoom::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateRoom_NFMsgPreGame_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateRoom_NFMsgPreGame_2eproto}, {}};
 
 static void InitDefaultsscc_info_ReqAccountLogin_NFMsgPreGame_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -442,7 +460,7 @@ static void InitDefaultsscc_info_ServerInfoReportList_NFMsgPreGame_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ServerInfoReportList_NFMsgPreGame_2eproto}, {
       &scc_info_ServerInfoReport_NFMsgPreGame_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_NFMsgPreGame_2eproto[22];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_NFMsgPreGame_2eproto[23];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_NFMsgPreGame_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_NFMsgPreGame_2eproto = nullptr;
 
@@ -649,6 +667,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_NFMsgPreGame_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::NFMsg::RoleDataPack, id_),
   PROTOBUF_FIELD_OFFSET(::NFMsg::RoleDataPack, property_),
   PROTOBUF_FIELD_OFFSET(::NFMsg::RoleDataPack, record_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::CreateRoom, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::CreateRoom, holderplayerid_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::NFMsg::ServerInfoReport)},
@@ -673,6 +697,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 169, -1, sizeof(::NFMsg::RoleOnlineNotify)},
   { 185, -1, sizeof(::NFMsg::RoleOfflineNotify)},
   { 194, -1, sizeof(::NFMsg::RoleDataPack)},
+  { 202, -1, sizeof(::NFMsg::CreateRoom)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -698,6 +723,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_RoleOnlineNotify_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_RoleOfflineNotify_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_RoleDataPack_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_CreateRoom_default_instance_),
 };
 
 const char descriptor_table_protodef_NFMsgPreGame_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -768,23 +794,25 @@ const char descriptor_table_protodef_NFMsgPreGame_2eproto[] PROTOBUF_SECTION_VAR
   "\005\022\r\n\005proxy\030\004 \001(\005\"~\n\014RoleDataPack\022\030\n\002id\030\001"
   " \001(\0132\014.NFMsg.Ident\022+\n\010property\030\002 \001(\0132\031.N"
   "FMsg.ObjectPropertyList\022\'\n\006record\030\003 \001(\0132"
-  "\027.NFMsg.ObjectRecordList*Z\n\014EServerState"
-  "\022\r\n\tEST_CRASH\020\000\022\016\n\nEST_NARMAL\020\001\022\014\n\010EST_B"
-  "USY\020\002\022\014\n\010EST_FIRE\020\003\022\017\n\013EST_MAINTEN\020\004*J\n\n"
-  "ELoginMode\022\r\n\tELM_LOGIN\020\000\022\020\n\014ELM_REGISTE"
-  "R\020\001\022\033\n\027ELM_AUTO_REGISTER_LOGIN\020\002*@\n\021ReqS"
-  "erverListType\022\025\n\021RSLT_WORLD_SERVER\020\000\022\024\n\020"
-  "RSLT_GAMES_ERVER\020\001b\006proto3"
+  "\027.NFMsg.ObjectRecordList\"$\n\nCreateRoom\022\026"
+  "\n\016HolderPlayerId\030\001 \001(\t*Z\n\014EServerState\022\r"
+  "\n\tEST_CRASH\020\000\022\016\n\nEST_NARMAL\020\001\022\014\n\010EST_BUS"
+  "Y\020\002\022\014\n\010EST_FIRE\020\003\022\017\n\013EST_MAINTEN\020\004*J\n\nEL"
+  "oginMode\022\r\n\tELM_LOGIN\020\000\022\020\n\014ELM_REGISTER\020"
+  "\001\022\033\n\027ELM_AUTO_REGISTER_LOGIN\020\002*@\n\021ReqSer"
+  "verListType\022\025\n\021RSLT_WORLD_SERVER\020\000\022\024\n\020RS"
+  "LT_GAMES_ERVER\020\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_NFMsgPreGame_2eproto_deps[2] = {
   &::descriptor_table_NFDefine_2eproto,
   &::descriptor_table_NFMsgBase_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFMsgPreGame_2eproto_sccs[22] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFMsgPreGame_2eproto_sccs[23] = {
   &scc_info_AckConnectWorldResult_NFMsgPreGame_2eproto.base,
   &scc_info_AckEventResult_NFMsgPreGame_2eproto.base,
   &scc_info_AckRoleLiteInfoList_NFMsgPreGame_2eproto.base,
   &scc_info_AckServerList_NFMsgPreGame_2eproto.base,
+  &scc_info_CreateRoom_NFMsgPreGame_2eproto.base,
   &scc_info_ReqAccountLogin_NFMsgPreGame_2eproto.base,
   &scc_info_ReqAccountLogout_NFMsgPreGame_2eproto.base,
   &scc_info_ReqConnectWorld_NFMsgPreGame_2eproto.base,
@@ -807,10 +835,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFM
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_NFMsgPreGame_2eproto_once;
 static bool descriptor_table_NFMsgPreGame_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_NFMsgPreGame_2eproto = {
-  &descriptor_table_NFMsgPreGame_2eproto_initialized, descriptor_table_protodef_NFMsgPreGame_2eproto, "NFMsgPreGame.proto", 2946,
-  &descriptor_table_NFMsgPreGame_2eproto_once, descriptor_table_NFMsgPreGame_2eproto_sccs, descriptor_table_NFMsgPreGame_2eproto_deps, 22, 2,
+  &descriptor_table_NFMsgPreGame_2eproto_initialized, descriptor_table_protodef_NFMsgPreGame_2eproto, "NFMsgPreGame.proto", 2984,
+  &descriptor_table_NFMsgPreGame_2eproto_once, descriptor_table_NFMsgPreGame_2eproto_sccs, descriptor_table_NFMsgPreGame_2eproto_deps, 23, 2,
   schemas, file_default_instances, TableStruct_NFMsgPreGame_2eproto::offsets,
-  file_level_metadata_NFMsgPreGame_2eproto, 22, file_level_enum_descriptors_NFMsgPreGame_2eproto, file_level_service_descriptors_NFMsgPreGame_2eproto,
+  file_level_metadata_NFMsgPreGame_2eproto, 23, file_level_enum_descriptors_NFMsgPreGame_2eproto, file_level_service_descriptors_NFMsgPreGame_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -7333,6 +7361,205 @@ void RoleDataPack::InternalSwap(RoleDataPack* other) {
 }
 
 
+// ===================================================================
+
+void CreateRoom::InitAsDefaultInstance() {
+}
+class CreateRoom::_Internal {
+ public:
+};
+
+CreateRoom::CreateRoom()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NFMsg.CreateRoom)
+}
+CreateRoom::CreateRoom(const CreateRoom& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  holderplayerid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_holderplayerid().empty()) {
+    holderplayerid_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.holderplayerid_);
+  }
+  // @@protoc_insertion_point(copy_constructor:NFMsg.CreateRoom)
+}
+
+void CreateRoom::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateRoom_NFMsgPreGame_2eproto.base);
+  holderplayerid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+CreateRoom::~CreateRoom() {
+  // @@protoc_insertion_point(destructor:NFMsg.CreateRoom)
+  SharedDtor();
+}
+
+void CreateRoom::SharedDtor() {
+  holderplayerid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void CreateRoom::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const CreateRoom& CreateRoom::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateRoom_NFMsgPreGame_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void CreateRoom::Clear() {
+// @@protoc_insertion_point(message_clear_start:NFMsg.CreateRoom)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  holderplayerid_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+const char* CreateRoom::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string HolderPlayerId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_holderplayerid();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "NFMsg.CreateRoom.HolderPlayerId"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* CreateRoom::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:NFMsg.CreateRoom)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string HolderPlayerId = 1;
+  if (this->holderplayerid().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_holderplayerid().data(), static_cast<int>(this->_internal_holderplayerid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "NFMsg.CreateRoom.HolderPlayerId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_holderplayerid(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NFMsg.CreateRoom)
+  return target;
+}
+
+size_t CreateRoom::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NFMsg.CreateRoom)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string HolderPlayerId = 1;
+  if (this->holderplayerid().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_holderplayerid());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CreateRoom::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NFMsg.CreateRoom)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateRoom* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateRoom>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NFMsg.CreateRoom)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NFMsg.CreateRoom)
+    MergeFrom(*source);
+  }
+}
+
+void CreateRoom::MergeFrom(const CreateRoom& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NFMsg.CreateRoom)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.holderplayerid().size() > 0) {
+
+    holderplayerid_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.holderplayerid_);
+  }
+}
+
+void CreateRoom::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NFMsg.CreateRoom)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CreateRoom::CopyFrom(const CreateRoom& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NFMsg.CreateRoom)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateRoom::IsInitialized() const {
+  return true;
+}
+
+void CreateRoom::InternalSwap(CreateRoom* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  holderplayerid_.Swap(&other->holderplayerid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CreateRoom::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace NFMsg
 PROTOBUF_NAMESPACE_OPEN
@@ -7401,6 +7628,9 @@ template<> PROTOBUF_NOINLINE ::NFMsg::RoleOfflineNotify* Arena::CreateMaybeMessa
 }
 template<> PROTOBUF_NOINLINE ::NFMsg::RoleDataPack* Arena::CreateMaybeMessage< ::NFMsg::RoleDataPack >(Arena* arena) {
   return Arena::CreateInternal< ::NFMsg::RoleDataPack >(arena);
+}
+template<> PROTOBUF_NOINLINE ::NFMsg::CreateRoom* Arena::CreateMaybeMessage< ::NFMsg::CreateRoom >(Arena* arena) {
+  return Arena::CreateInternal< ::NFMsg::CreateRoom >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

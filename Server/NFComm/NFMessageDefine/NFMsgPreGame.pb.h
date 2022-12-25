@@ -50,7 +50,7 @@ struct TableStruct_NFMsgPreGame_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -70,6 +70,9 @@ extern AckRoleLiteInfoListDefaultTypeInternal _AckRoleLiteInfoList_default_insta
 class AckServerList;
 class AckServerListDefaultTypeInternal;
 extern AckServerListDefaultTypeInternal _AckServerList_default_instance_;
+class CreateRoom;
+class CreateRoomDefaultTypeInternal;
+extern CreateRoomDefaultTypeInternal _CreateRoom_default_instance_;
 class ReqAccountLogin;
 class ReqAccountLoginDefaultTypeInternal;
 extern ReqAccountLoginDefaultTypeInternal _ReqAccountLogin_default_instance_;
@@ -130,6 +133,7 @@ template<> ::NFMsg::AckConnectWorldResult* Arena::CreateMaybeMessage<::NFMsg::Ac
 template<> ::NFMsg::AckEventResult* Arena::CreateMaybeMessage<::NFMsg::AckEventResult>(Arena*);
 template<> ::NFMsg::AckRoleLiteInfoList* Arena::CreateMaybeMessage<::NFMsg::AckRoleLiteInfoList>(Arena*);
 template<> ::NFMsg::AckServerList* Arena::CreateMaybeMessage<::NFMsg::AckServerList>(Arena*);
+template<> ::NFMsg::CreateRoom* Arena::CreateMaybeMessage<::NFMsg::CreateRoom>(Arena*);
 template<> ::NFMsg::ReqAccountLogin* Arena::CreateMaybeMessage<::NFMsg::ReqAccountLogin>(Arena*);
 template<> ::NFMsg::ReqAccountLogout* Arena::CreateMaybeMessage<::NFMsg::ReqAccountLogout>(Arena*);
 template<> ::NFMsg::ReqConnectWorld* Arena::CreateMaybeMessage<::NFMsg::ReqConnectWorld>(Arena*);
@@ -4152,6 +4156,141 @@ class RoleDataPack :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgPreGame_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CreateRoom :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.CreateRoom) */ {
+ public:
+  CreateRoom();
+  virtual ~CreateRoom();
+
+  CreateRoom(const CreateRoom& from);
+  CreateRoom(CreateRoom&& from) noexcept
+    : CreateRoom() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateRoom& operator=(const CreateRoom& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateRoom& operator=(CreateRoom&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CreateRoom& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreateRoom* internal_default_instance() {
+    return reinterpret_cast<const CreateRoom*>(
+               &_CreateRoom_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(CreateRoom& a, CreateRoom& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateRoom* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateRoom* New() const final {
+    return CreateMaybeMessage<CreateRoom>(nullptr);
+  }
+
+  CreateRoom* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateRoom>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CreateRoom& from);
+  void MergeFrom(const CreateRoom& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateRoom* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.CreateRoom";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgPreGame_2eproto);
+    return ::descriptor_table_NFMsgPreGame_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHolderPlayerIdFieldNumber = 1,
+  };
+  // string HolderPlayerId = 1;
+  void clear_holderplayerid();
+  const std::string& holderplayerid() const;
+  void set_holderplayerid(const std::string& value);
+  void set_holderplayerid(std::string&& value);
+  void set_holderplayerid(const char* value);
+  void set_holderplayerid(const char* value, size_t size);
+  std::string* mutable_holderplayerid();
+  std::string* release_holderplayerid();
+  void set_allocated_holderplayerid(std::string* holderplayerid);
+  private:
+  const std::string& _internal_holderplayerid() const;
+  void _internal_set_holderplayerid(const std::string& value);
+  std::string* _internal_mutable_holderplayerid();
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.CreateRoom)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr holderplayerid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgPreGame_2eproto;
+};
 // ===================================================================
 
 
@@ -7694,9 +7833,75 @@ inline void RoleDataPack::set_allocated_record(::NFMsg::ObjectRecordList* record
   // @@protoc_insertion_point(field_set_allocated:NFMsg.RoleDataPack.record)
 }
 
+// -------------------------------------------------------------------
+
+// CreateRoom
+
+// string HolderPlayerId = 1;
+inline void CreateRoom::clear_holderplayerid() {
+  holderplayerid_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& CreateRoom::holderplayerid() const {
+  // @@protoc_insertion_point(field_get:NFMsg.CreateRoom.HolderPlayerId)
+  return _internal_holderplayerid();
+}
+inline void CreateRoom::set_holderplayerid(const std::string& value) {
+  _internal_set_holderplayerid(value);
+  // @@protoc_insertion_point(field_set:NFMsg.CreateRoom.HolderPlayerId)
+}
+inline std::string* CreateRoom::mutable_holderplayerid() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.CreateRoom.HolderPlayerId)
+  return _internal_mutable_holderplayerid();
+}
+inline const std::string& CreateRoom::_internal_holderplayerid() const {
+  return holderplayerid_.GetNoArena();
+}
+inline void CreateRoom::_internal_set_holderplayerid(const std::string& value) {
+  
+  holderplayerid_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void CreateRoom::set_holderplayerid(std::string&& value) {
+  
+  holderplayerid_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.CreateRoom.HolderPlayerId)
+}
+inline void CreateRoom::set_holderplayerid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  holderplayerid_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.CreateRoom.HolderPlayerId)
+}
+inline void CreateRoom::set_holderplayerid(const char* value, size_t size) {
+  
+  holderplayerid_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.CreateRoom.HolderPlayerId)
+}
+inline std::string* CreateRoom::_internal_mutable_holderplayerid() {
+  
+  return holderplayerid_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* CreateRoom::release_holderplayerid() {
+  // @@protoc_insertion_point(field_release:NFMsg.CreateRoom.HolderPlayerId)
+  
+  return holderplayerid_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateRoom::set_allocated_holderplayerid(std::string* holderplayerid) {
+  if (holderplayerid != nullptr) {
+    
+  } else {
+    
+  }
+  holderplayerid_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), holderplayerid);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.CreateRoom.HolderPlayerId)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
