@@ -52,9 +52,11 @@ bool NFProxyLogicModule::AfterInit()
     m_pClassModule = pPluginManager->FindModule<NFIClassModule>();
 	m_pNetModule = pPluginManager->FindModule<NFINetModule>();
 	m_pNetClientModule = pPluginManager->FindModule<NFINetClientModule>();
-
+    m_pSecurityModule = pPluginManager->FindModule<NFISecurityModule>();
 
 	m_pNetModule->AddReceiveCallBack(NFMsg::REQ_LAG_TEST, this, &NFProxyLogicModule::OnLagTestProcess);
+	
+	m_pNetModule->AddReceiveCallBack(NFMsg::CREATE_ROOM, this, &NFProxyLogicModule::OnCreateRoom);
 
     return true;
 }
@@ -71,4 +73,53 @@ void NFProxyLogicModule::OnLagTestProcess(const NFSOCK sockIndex, const int msgI
 		const int gameID = pNetObject->GetGameID();
 		m_pNetClientModule->SendByServerIDWithOutHead(gameID, msgID, msgDatag);
 	}
+}
+
+void NFProxyLogicModule::OnCreateRoom(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len) 
+{
+    NetObject* pNetObject = m_pNetModule->GetNet()->GetNetObject(sockIndex);
+    if (!pNetObject)
+    {
+        return;
+    }
+
+    std::string strMsgData = m_pSecurityModule->DecodeMsg(pNetObject->GetAccount(), pNetObject->GetSecurityKey(), msgID, msg, len);
+    if (strMsgData.empty())
+    {
+        //decode failed
+        return;
+    }
+
+    NFGUID nPlayerID;//no value
+    NFMsg::ReqEnterGameServer xData;
+    if (!m_pNetModule->ReceivePB(msgID, msg, len, xData, nPlayerID))
+    {
+        return;
+    }
+
+    NF_SHARE_PTR<ConnectData> pServerData = m_pNetClientModule->GetServerNetInfo(pNetObject->GetGameID());
+    if (pServerData && ConnectDataState::NORMAL == pServerData->eState)
+    {
+        if (pNetObject->GetConnectKeyState() > 0
+            && pNetObject->GetAccount() == xData.account()
+            && !xData.name().empty()
+            && !xData.account().empty())
+        {
+            NFMsg::MsgBase xMsg;
+            if (!xData.SerializeToString(xMsg.mutable_msg_data()))
+            {
+                return;
+            }
+
+            //clientid
+            xMsg.mutable_player_id()->CopyFrom(NFINetModule::NFToPB(pNetObject->GetClientID()));
+            std::string msg;
+            if (!xMsg.SerializeToString(&msg))
+            {
+                return;
+            }
+
+            m_pNetClientModule->SendByServerIDWithOutHead(pNetObject->GetGameID(), NFMsg::EGameMsgID::CREATE_ROOM, msg);
+        }
+    }
 }

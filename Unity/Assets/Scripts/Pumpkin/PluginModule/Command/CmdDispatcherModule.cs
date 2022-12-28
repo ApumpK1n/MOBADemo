@@ -9,7 +9,7 @@ namespace Pumpkin
 {
     public class CmdDispatcherModule : NFIModule
     {
-        private Dictionary<uint, IHandler> m_Handlers = new Dictionary<uint, IHandler>();
+        private Dictionary<AllCmdType, IHandler> m_Handlers = new Dictionary<AllCmdType, IHandler>();
 
         public CmdDispatcherModule(NFIPluginManager pluginManager)
         {

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Pumpkin
 {
-    public static class AllCmdType
+    public enum AllCmdType
     {
-        public const uint Move = 1;
+        Move = 1,
     }
 }

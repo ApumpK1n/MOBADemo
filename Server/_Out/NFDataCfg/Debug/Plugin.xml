@@ -16,6 +16,7 @@
         <Plugin Name="NFInventoryPlugin" />
         <Plugin Name="NFConsumeManagerPlugin" />
         <Plugin Name="NFChatPlugin" />
+		<Plugin Name="PumpkinBattlePlugin" />
 
 	</GameServer>
 

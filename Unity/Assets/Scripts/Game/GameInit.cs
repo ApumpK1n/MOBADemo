@@ -25,7 +25,11 @@ namespace Pumpkin
             s_Instance = this;
 
             m_PluginManager.Registered(new NFSDKPlugin(m_PluginManager));
+            m_PluginManager.Registered(new NetPlugin(m_PluginManager));
+            m_PluginManager.Registered(new CmdPlugin(m_PluginManager));
+            m_PluginManager.Registered(new CommandQueuePlugin(m_PluginManager));
             m_PluginManager.Registered(new UIPlugin(m_PluginManager));
+
 
             m_PluginManager.Awake();
             m_PluginManager.Init();

@@ -43,6 +43,7 @@
 #include "NFExamples/NFChatPlugin/NFChatPlugin.h"
 #include "NFExamples/NFConsumeManagerPlugin/NFConsumeManagerPlugin.h"
 #include "NFExamples/NFInventoryPlugin/NFInventoryPlugin.h"
+#include "NFExamples/PumpkinBattlePlugin/PumpkinBattlePlugin.h"
 
 #if NF_PLATFORM == NF_PLATFORM_APPLE || NF_PLATFORM == NF_PLATFORM_WIN
 #include "NFComm/NFRenderPlugin/NFRenderPlugin.h"
@@ -129,6 +130,8 @@
 #pragma comment( lib, "NFChatPlugin.lib" )
 #pragma comment( lib, "NFInventoryPlugin.lib" )
 #pragma comment( lib, "NFConsumeManagerPlugin.lib" )
+// add
+#pragma comment( lib, "PumpkinBattlePlugin.lib" )
 
 #pragma comment( lib, "Tutorial1.lib" )
 #pragma comment( lib, "Tutorial2.lib" )
@@ -177,6 +180,8 @@ CREATE_PLUGIN(pPluginManager, NFDBNet_ServerPlugin)
 CREATE_PLUGIN(pPluginManager, NFGameServerNet_ClientPlugin)
 CREATE_PLUGIN(pPluginManager, NFGameServerNet_ServerPlugin)
 CREATE_PLUGIN(pPluginManager, NFGameServerPlugin)
+
+CREATE_PLUGIN(pPluginManager, PumpkinBattlePlugin)
 
 //LOGIN
 CREATE_PLUGIN(pPluginManager, NFLoginLogicPlugin)

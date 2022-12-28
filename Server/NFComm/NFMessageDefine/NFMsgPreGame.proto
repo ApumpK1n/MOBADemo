@@ -216,3 +216,23 @@ message RoleDataPack
 message CreateRoom{
     string HolderPlayerId = 1;
 }
+
+// Battle
+
+message C2G_FrameCmd{
+	int32 Frame = 1;
+	int32 SyncCmdType = 2;
+	string PlayerId = 3;
+}
+
+message C2G_MoveCmd{
+	C2G_FrameCmd FrameCmd = 1;
+
+	float PosX = 2;
+	float PosY = 3;
+	float PosZ = 4;
+
+	float TargetPosX = 5;
+	float TargetPosY = 6;
+	float TargetPosZ = 7;
+}

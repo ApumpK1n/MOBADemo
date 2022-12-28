@@ -32,6 +32,7 @@
 #include "NFComm/NFPluginModule/NFILogModule.h"
 #include "NFComm/NFPluginModule/NFINetModule.h"
 #include "NFComm/NFPluginModule/NFINetClientModule.h"
+#include "NFComm/NFPluginModule/NFISecurityModule.h"
 
 class NFProxyLogicModule
     : public NFIProxyLogicModule
@@ -52,11 +53,15 @@ protected:
 
 	void OnLagTestProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
+    void OnCreateRoom(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
+
 protected:
     NFIClassModule* m_pClassModule;
     NFIKernelModule* m_pKernelModule;
 	NFINetModule* m_pNetModule;
 	NFINetClientModule* m_pNetClientModule;
+
+    NFISecurityModule* m_pSecurityModule;
 private:
 };
 

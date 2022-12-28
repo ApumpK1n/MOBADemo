@@ -84,13 +84,18 @@ namespace NFMsg {
             "cHJveHkYBCABKAUifgoMUm9sZURhdGFQYWNrEhgKAmlkGAEgASgLMgwuTkZN",
             "c2cuSWRlbnQSKwoIcHJvcGVydHkYAiABKAsyGS5ORk1zZy5PYmplY3RQcm9w",
             "ZXJ0eUxpc3QSJwoGcmVjb3JkGAMgASgLMhcuTkZNc2cuT2JqZWN0UmVjb3Jk",
-            "TGlzdCIkCgpDcmVhdGVSb29tEhYKDkhvbGRlclBsYXllcklkGAEgASgJKloK",
-            "DEVTZXJ2ZXJTdGF0ZRINCglFU1RfQ1JBU0gQABIOCgpFU1RfTkFSTUFMEAES",
-            "DAoIRVNUX0JVU1kQAhIMCghFU1RfRklSRRADEg8KC0VTVF9NQUlOVEVOEAQq",
-            "SgoKRUxvZ2luTW9kZRINCglFTE1fTE9HSU4QABIQCgxFTE1fUkVHSVNURVIQ",
-            "ARIbChdFTE1fQVVUT19SRUdJU1RFUl9MT0dJThACKkAKEVJlcVNlcnZlckxp",
-            "c3RUeXBlEhUKEVJTTFRfV09STERfU0VSVkVSEAASFAoQUlNMVF9HQU1FU19F",
-            "UlZFUhABYgZwcm90bzM="));
+            "TGlzdCIkCgpDcmVhdGVSb29tEhYKDkhvbGRlclBsYXllcklkGAEgASgJIkQK",
+            "DEMyR19GcmFtZUNtZBINCgVGcmFtZRgBIAEoBRITCgtTeW5jQ21kVHlwZRgC",
+            "IAEoBRIQCghQbGF5ZXJJZBgDIAEoCSKaAQoLQzJHX01vdmVDbWQSJQoIRnJh",
+            "bWVDbWQYASABKAsyEy5ORk1zZy5DMkdfRnJhbWVDbWQSDAoEUG9zWBgCIAEo",
+            "AhIMCgRQb3NZGAMgASgCEgwKBFBvc1oYBCABKAISEgoKVGFyZ2V0UG9zWBgF",
+            "IAEoAhISCgpUYXJnZXRQb3NZGAYgASgCEhIKClRhcmdldFBvc1oYByABKAIq",
+            "WgoMRVNlcnZlclN0YXRlEg0KCUVTVF9DUkFTSBAAEg4KCkVTVF9OQVJNQUwQ",
+            "ARIMCghFU1RfQlVTWRACEgwKCEVTVF9GSVJFEAMSDwoLRVNUX01BSU5URU4Q",
+            "BCpKCgpFTG9naW5Nb2RlEg0KCUVMTV9MT0dJThAAEhAKDEVMTV9SRUdJU1RF",
+            "UhABEhsKF0VMTV9BVVRPX1JFR0lTVEVSX0xPR0lOEAIqQAoRUmVxU2VydmVy",
+            "TGlzdFR5cGUSFQoRUlNMVF9XT1JMRF9TRVJWRVIQABIUChBSU0xUX0dBTUVT",
+            "X0VSVkVSEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NFMsg.NFDefineReflection.Descriptor, global::NFMsg.NFMsgBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NFMsg.EServerState), typeof(global::NFMsg.ELoginMode), typeof(global::NFMsg.ReqServerListType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -116,7 +121,9 @@ namespace NFMsg {
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleOnlineNotify), global::NFMsg.RoleOnlineNotify.Parser, new[]{ "Self", "Game", "Proxy", "Name", "Bp", "PropertyIntList", "PropertyFloatList", "PropertyStringList", "PropertyObjectList", "PropertyVector2List", "PropertyVector3List" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleOfflineNotify), global::NFMsg.RoleOfflineNotify.Parser, new[]{ "Self", "Clan", "Game", "Proxy" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleDataPack), global::NFMsg.RoleDataPack.Parser, new[]{ "Id", "Property", "Record" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.CreateRoom), global::NFMsg.CreateRoom.Parser, new[]{ "HolderPlayerId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.CreateRoom), global::NFMsg.CreateRoom.Parser, new[]{ "HolderPlayerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.C2G_FrameCmd), global::NFMsg.C2G_FrameCmd.Parser, new[]{ "Frame", "SyncCmdType", "PlayerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.C2G_MoveCmd), global::NFMsg.C2G_MoveCmd.Parser, new[]{ "FrameCmd", "PosX", "PosY", "PosZ", "TargetPosX", "TargetPosY", "TargetPosZ" }, null, null, null, null)
           }));
     }
     #endregion
@@ -5073,6 +5080,494 @@ namespace NFMsg {
             break;
           case 10: {
             HolderPlayerId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class C2G_FrameCmd : pb::IMessage<C2G_FrameCmd> {
+    private static readonly pb::MessageParser<C2G_FrameCmd> _parser = new pb::MessageParser<C2G_FrameCmd>(() => new C2G_FrameCmd());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2G_FrameCmd> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[23]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2G_FrameCmd() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2G_FrameCmd(C2G_FrameCmd other) : this() {
+      frame_ = other.frame_;
+      syncCmdType_ = other.syncCmdType_;
+      playerId_ = other.playerId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2G_FrameCmd Clone() {
+      return new C2G_FrameCmd(this);
+    }
+
+    /// <summary>Field number for the "Frame" field.</summary>
+    public const int FrameFieldNumber = 1;
+    private int frame_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Frame {
+      get { return frame_; }
+      set {
+        frame_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "SyncCmdType" field.</summary>
+    public const int SyncCmdTypeFieldNumber = 2;
+    private int syncCmdType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SyncCmdType {
+      get { return syncCmdType_; }
+      set {
+        syncCmdType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PlayerId" field.</summary>
+    public const int PlayerIdFieldNumber = 3;
+    private string playerId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2G_FrameCmd);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2G_FrameCmd other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Frame != other.Frame) return false;
+      if (SyncCmdType != other.SyncCmdType) return false;
+      if (PlayerId != other.PlayerId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Frame != 0) hash ^= Frame.GetHashCode();
+      if (SyncCmdType != 0) hash ^= SyncCmdType.GetHashCode();
+      if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Frame != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Frame);
+      }
+      if (SyncCmdType != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(SyncCmdType);
+      }
+      if (PlayerId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PlayerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Frame != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Frame);
+      }
+      if (SyncCmdType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SyncCmdType);
+      }
+      if (PlayerId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2G_FrameCmd other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Frame != 0) {
+        Frame = other.Frame;
+      }
+      if (other.SyncCmdType != 0) {
+        SyncCmdType = other.SyncCmdType;
+      }
+      if (other.PlayerId.Length != 0) {
+        PlayerId = other.PlayerId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Frame = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            SyncCmdType = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            PlayerId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class C2G_MoveCmd : pb::IMessage<C2G_MoveCmd> {
+    private static readonly pb::MessageParser<C2G_MoveCmd> _parser = new pb::MessageParser<C2G_MoveCmd>(() => new C2G_MoveCmd());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2G_MoveCmd> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[24]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2G_MoveCmd() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2G_MoveCmd(C2G_MoveCmd other) : this() {
+      frameCmd_ = other.frameCmd_ != null ? other.frameCmd_.Clone() : null;
+      posX_ = other.posX_;
+      posY_ = other.posY_;
+      posZ_ = other.posZ_;
+      targetPosX_ = other.targetPosX_;
+      targetPosY_ = other.targetPosY_;
+      targetPosZ_ = other.targetPosZ_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2G_MoveCmd Clone() {
+      return new C2G_MoveCmd(this);
+    }
+
+    /// <summary>Field number for the "FrameCmd" field.</summary>
+    public const int FrameCmdFieldNumber = 1;
+    private global::NFMsg.C2G_FrameCmd frameCmd_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.C2G_FrameCmd FrameCmd {
+      get { return frameCmd_; }
+      set {
+        frameCmd_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PosX" field.</summary>
+    public const int PosXFieldNumber = 2;
+    private float posX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float PosX {
+      get { return posX_; }
+      set {
+        posX_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PosY" field.</summary>
+    public const int PosYFieldNumber = 3;
+    private float posY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float PosY {
+      get { return posY_; }
+      set {
+        posY_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PosZ" field.</summary>
+    public const int PosZFieldNumber = 4;
+    private float posZ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float PosZ {
+      get { return posZ_; }
+      set {
+        posZ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "TargetPosX" field.</summary>
+    public const int TargetPosXFieldNumber = 5;
+    private float targetPosX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float TargetPosX {
+      get { return targetPosX_; }
+      set {
+        targetPosX_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "TargetPosY" field.</summary>
+    public const int TargetPosYFieldNumber = 6;
+    private float targetPosY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float TargetPosY {
+      get { return targetPosY_; }
+      set {
+        targetPosY_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "TargetPosZ" field.</summary>
+    public const int TargetPosZFieldNumber = 7;
+    private float targetPosZ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float TargetPosZ {
+      get { return targetPosZ_; }
+      set {
+        targetPosZ_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2G_MoveCmd);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2G_MoveCmd other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(FrameCmd, other.FrameCmd)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PosX, other.PosX)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PosY, other.PosY)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PosZ, other.PosZ)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TargetPosX, other.TargetPosX)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TargetPosY, other.TargetPosY)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TargetPosZ, other.TargetPosZ)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (frameCmd_ != null) hash ^= FrameCmd.GetHashCode();
+      if (PosX != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PosX);
+      if (PosY != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PosY);
+      if (PosZ != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PosZ);
+      if (TargetPosX != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TargetPosX);
+      if (TargetPosY != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TargetPosY);
+      if (TargetPosZ != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TargetPosZ);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (frameCmd_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(FrameCmd);
+      }
+      if (PosX != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(PosX);
+      }
+      if (PosY != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(PosY);
+      }
+      if (PosZ != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(PosZ);
+      }
+      if (TargetPosX != 0F) {
+        output.WriteRawTag(45);
+        output.WriteFloat(TargetPosX);
+      }
+      if (TargetPosY != 0F) {
+        output.WriteRawTag(53);
+        output.WriteFloat(TargetPosY);
+      }
+      if (TargetPosZ != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(TargetPosZ);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (frameCmd_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FrameCmd);
+      }
+      if (PosX != 0F) {
+        size += 1 + 4;
+      }
+      if (PosY != 0F) {
+        size += 1 + 4;
+      }
+      if (PosZ != 0F) {
+        size += 1 + 4;
+      }
+      if (TargetPosX != 0F) {
+        size += 1 + 4;
+      }
+      if (TargetPosY != 0F) {
+        size += 1 + 4;
+      }
+      if (TargetPosZ != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2G_MoveCmd other) {
+      if (other == null) {
+        return;
+      }
+      if (other.frameCmd_ != null) {
+        if (frameCmd_ == null) {
+          FrameCmd = new global::NFMsg.C2G_FrameCmd();
+        }
+        FrameCmd.MergeFrom(other.FrameCmd);
+      }
+      if (other.PosX != 0F) {
+        PosX = other.PosX;
+      }
+      if (other.PosY != 0F) {
+        PosY = other.PosY;
+      }
+      if (other.PosZ != 0F) {
+        PosZ = other.PosZ;
+      }
+      if (other.TargetPosX != 0F) {
+        TargetPosX = other.TargetPosX;
+      }
+      if (other.TargetPosY != 0F) {
+        TargetPosY = other.TargetPosY;
+      }
+      if (other.TargetPosZ != 0F) {
+        TargetPosZ = other.TargetPosZ;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (frameCmd_ == null) {
+              FrameCmd = new global::NFMsg.C2G_FrameCmd();
+            }
+            input.ReadMessage(FrameCmd);
+            break;
+          }
+          case 21: {
+            PosX = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            PosY = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            PosZ = input.ReadFloat();
+            break;
+          }
+          case 45: {
+            TargetPosX = input.ReadFloat();
+            break;
+          }
+          case 53: {
+            TargetPosY = input.ReadFloat();
+            break;
+          }
+          case 61: {
+            TargetPosZ = input.ReadFloat();
             break;
           }
         }

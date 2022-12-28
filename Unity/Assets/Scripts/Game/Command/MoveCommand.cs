@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NFSDK;
+using UnityEngine;
 
 namespace Pumpkin
 {
@@ -10,8 +10,8 @@ namespace Pumpkin
     public class MoveCommand : Cmd
     {
 
-        public const uint CmdType = AllCmdType.Move;
-        
+        public const AllCmdType CmdType = AllCmdType.Move;
+
         // Pos
         public float PosX;
         public float PosY;
