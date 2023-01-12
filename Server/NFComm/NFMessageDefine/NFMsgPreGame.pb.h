@@ -50,7 +50,7 @@ struct TableStruct_NFMsgPreGame_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[25]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -70,6 +70,9 @@ extern AckRoleLiteInfoListDefaultTypeInternal _AckRoleLiteInfoList_default_insta
 class AckServerList;
 class AckServerListDefaultTypeInternal;
 extern AckServerListDefaultTypeInternal _AckServerList_default_instance_;
+class C2G_AttackCmd;
+class C2G_AttackCmdDefaultTypeInternal;
+extern C2G_AttackCmdDefaultTypeInternal _C2G_AttackCmd_default_instance_;
 class C2G_FrameCmd;
 class C2G_FrameCmdDefaultTypeInternal;
 extern C2G_FrameCmdDefaultTypeInternal _C2G_FrameCmd_default_instance_;
@@ -139,6 +142,7 @@ template<> ::NFMsg::AckConnectWorldResult* Arena::CreateMaybeMessage<::NFMsg::Ac
 template<> ::NFMsg::AckEventResult* Arena::CreateMaybeMessage<::NFMsg::AckEventResult>(Arena*);
 template<> ::NFMsg::AckRoleLiteInfoList* Arena::CreateMaybeMessage<::NFMsg::AckRoleLiteInfoList>(Arena*);
 template<> ::NFMsg::AckServerList* Arena::CreateMaybeMessage<::NFMsg::AckServerList>(Arena*);
+template<> ::NFMsg::C2G_AttackCmd* Arena::CreateMaybeMessage<::NFMsg::C2G_AttackCmd>(Arena*);
 template<> ::NFMsg::C2G_FrameCmd* Arena::CreateMaybeMessage<::NFMsg::C2G_FrameCmd>(Arena*);
 template<> ::NFMsg::C2G_MoveCmd* Arena::CreateMaybeMessage<::NFMsg::C2G_MoveCmd>(Arena*);
 template<> ::NFMsg::CreateRoom* Arena::CreateMaybeMessage<::NFMsg::CreateRoom>(Arena*);
@@ -4656,6 +4660,158 @@ class C2G_MoveCmd :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgPreGame_2eproto;
 };
+// -------------------------------------------------------------------
+
+class C2G_AttackCmd :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.C2G_AttackCmd) */ {
+ public:
+  C2G_AttackCmd();
+  virtual ~C2G_AttackCmd();
+
+  C2G_AttackCmd(const C2G_AttackCmd& from);
+  C2G_AttackCmd(C2G_AttackCmd&& from) noexcept
+    : C2G_AttackCmd() {
+    *this = ::std::move(from);
+  }
+
+  inline C2G_AttackCmd& operator=(const C2G_AttackCmd& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline C2G_AttackCmd& operator=(C2G_AttackCmd&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const C2G_AttackCmd& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const C2G_AttackCmd* internal_default_instance() {
+    return reinterpret_cast<const C2G_AttackCmd*>(
+               &_C2G_AttackCmd_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(C2G_AttackCmd& a, C2G_AttackCmd& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(C2G_AttackCmd* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline C2G_AttackCmd* New() const final {
+    return CreateMaybeMessage<C2G_AttackCmd>(nullptr);
+  }
+
+  C2G_AttackCmd* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<C2G_AttackCmd>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const C2G_AttackCmd& from);
+  void MergeFrom(const C2G_AttackCmd& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(C2G_AttackCmd* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.C2G_AttackCmd";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgPreGame_2eproto);
+    return ::descriptor_table_NFMsgPreGame_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTargetIdFieldNumber = 2,
+    kFrameCmdFieldNumber = 1,
+  };
+  // string TargetId = 2;
+  void clear_targetid();
+  const std::string& targetid() const;
+  void set_targetid(const std::string& value);
+  void set_targetid(std::string&& value);
+  void set_targetid(const char* value);
+  void set_targetid(const char* value, size_t size);
+  std::string* mutable_targetid();
+  std::string* release_targetid();
+  void set_allocated_targetid(std::string* targetid);
+  private:
+  const std::string& _internal_targetid() const;
+  void _internal_set_targetid(const std::string& value);
+  std::string* _internal_mutable_targetid();
+  public:
+
+  // .NFMsg.C2G_FrameCmd FrameCmd = 1;
+  bool has_framecmd() const;
+  private:
+  bool _internal_has_framecmd() const;
+  public:
+  void clear_framecmd();
+  const ::NFMsg::C2G_FrameCmd& framecmd() const;
+  ::NFMsg::C2G_FrameCmd* release_framecmd();
+  ::NFMsg::C2G_FrameCmd* mutable_framecmd();
+  void set_allocated_framecmd(::NFMsg::C2G_FrameCmd* framecmd);
+  private:
+  const ::NFMsg::C2G_FrameCmd& _internal_framecmd() const;
+  ::NFMsg::C2G_FrameCmd* _internal_mutable_framecmd();
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.C2G_AttackCmd)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr targetid_;
+  ::NFMsg::C2G_FrameCmd* framecmd_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgPreGame_2eproto;
+};
 // ===================================================================
 
 
@@ -8550,9 +8706,135 @@ inline void C2G_MoveCmd::set_targetposz(float value) {
   // @@protoc_insertion_point(field_set:NFMsg.C2G_MoveCmd.TargetPosZ)
 }
 
+// -------------------------------------------------------------------
+
+// C2G_AttackCmd
+
+// .NFMsg.C2G_FrameCmd FrameCmd = 1;
+inline bool C2G_AttackCmd::_internal_has_framecmd() const {
+  return this != internal_default_instance() && framecmd_ != nullptr;
+}
+inline bool C2G_AttackCmd::has_framecmd() const {
+  return _internal_has_framecmd();
+}
+inline void C2G_AttackCmd::clear_framecmd() {
+  if (GetArenaNoVirtual() == nullptr && framecmd_ != nullptr) {
+    delete framecmd_;
+  }
+  framecmd_ = nullptr;
+}
+inline const ::NFMsg::C2G_FrameCmd& C2G_AttackCmd::_internal_framecmd() const {
+  const ::NFMsg::C2G_FrameCmd* p = framecmd_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::C2G_FrameCmd*>(
+      &::NFMsg::_C2G_FrameCmd_default_instance_);
+}
+inline const ::NFMsg::C2G_FrameCmd& C2G_AttackCmd::framecmd() const {
+  // @@protoc_insertion_point(field_get:NFMsg.C2G_AttackCmd.FrameCmd)
+  return _internal_framecmd();
+}
+inline ::NFMsg::C2G_FrameCmd* C2G_AttackCmd::release_framecmd() {
+  // @@protoc_insertion_point(field_release:NFMsg.C2G_AttackCmd.FrameCmd)
+  
+  ::NFMsg::C2G_FrameCmd* temp = framecmd_;
+  framecmd_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::C2G_FrameCmd* C2G_AttackCmd::_internal_mutable_framecmd() {
+  
+  if (framecmd_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::C2G_FrameCmd>(GetArenaNoVirtual());
+    framecmd_ = p;
+  }
+  return framecmd_;
+}
+inline ::NFMsg::C2G_FrameCmd* C2G_AttackCmd::mutable_framecmd() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.C2G_AttackCmd.FrameCmd)
+  return _internal_mutable_framecmd();
+}
+inline void C2G_AttackCmd::set_allocated_framecmd(::NFMsg::C2G_FrameCmd* framecmd) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete framecmd_;
+  }
+  if (framecmd) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      framecmd = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, framecmd, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  framecmd_ = framecmd;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.C2G_AttackCmd.FrameCmd)
+}
+
+// string TargetId = 2;
+inline void C2G_AttackCmd::clear_targetid() {
+  targetid_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& C2G_AttackCmd::targetid() const {
+  // @@protoc_insertion_point(field_get:NFMsg.C2G_AttackCmd.TargetId)
+  return _internal_targetid();
+}
+inline void C2G_AttackCmd::set_targetid(const std::string& value) {
+  _internal_set_targetid(value);
+  // @@protoc_insertion_point(field_set:NFMsg.C2G_AttackCmd.TargetId)
+}
+inline std::string* C2G_AttackCmd::mutable_targetid() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.C2G_AttackCmd.TargetId)
+  return _internal_mutable_targetid();
+}
+inline const std::string& C2G_AttackCmd::_internal_targetid() const {
+  return targetid_.GetNoArena();
+}
+inline void C2G_AttackCmd::_internal_set_targetid(const std::string& value) {
+  
+  targetid_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void C2G_AttackCmd::set_targetid(std::string&& value) {
+  
+  targetid_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.C2G_AttackCmd.TargetId)
+}
+inline void C2G_AttackCmd::set_targetid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  targetid_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.C2G_AttackCmd.TargetId)
+}
+inline void C2G_AttackCmd::set_targetid(const char* value, size_t size) {
+  
+  targetid_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.C2G_AttackCmd.TargetId)
+}
+inline std::string* C2G_AttackCmd::_internal_mutable_targetid() {
+  
+  return targetid_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* C2G_AttackCmd::release_targetid() {
+  // @@protoc_insertion_point(field_release:NFMsg.C2G_AttackCmd.TargetId)
+  
+  return targetid_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void C2G_AttackCmd::set_allocated_targetid(std::string* targetid) {
+  if (targetid != nullptr) {
+    
+  } else {
+    
+  }
+  targetid_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), targetid);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.C2G_AttackCmd.TargetId)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

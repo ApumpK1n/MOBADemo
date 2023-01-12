@@ -24,6 +24,7 @@ namespace Pumpkin
 
         private void Awake()
         {
+            m_NavMeshSurface = FindObjectOfType<NavMeshSurface>();
             m_Path = new NavMeshPath();
             m_NavMeshQueryFilter = new NavMeshQueryFilter
             {

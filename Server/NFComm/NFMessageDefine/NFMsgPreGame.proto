@@ -236,3 +236,9 @@ message C2G_MoveCmd{
 	float TargetPosY = 6;
 	float TargetPosZ = 7;
 }
+
+message C2G_AttackCmd{
+	C2G_FrameCmd FrameCmd = 1;
+
+	string TargetId = 2;
+}

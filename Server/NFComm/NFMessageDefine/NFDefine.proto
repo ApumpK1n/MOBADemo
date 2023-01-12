@@ -159,6 +159,7 @@ enum EGameMsgID
 	//game logic message id, start from 1000
 	CREATE_ROOM								= 1000;
 	BATTLE_CLIENT_CMD						= 1001;
+	BATTLE_ATTACK_CMD						= 1002;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

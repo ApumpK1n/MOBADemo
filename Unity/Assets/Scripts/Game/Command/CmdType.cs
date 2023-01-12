@@ -9,5 +9,6 @@ namespace Pumpkin
     public enum AllCmdType
     {
         Move = 1,
+        Attack = 2,
     }
 }
