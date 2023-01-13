@@ -16,6 +16,9 @@
     <Filter Include="NFSyncPosModule">
       <UniqueIdentifier>{e50b7301-9914-4009-8fbb-686e76d838a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PumpkinBattleModule">
+      <UniqueIdentifier>{64465e89-b47f-47b2-b8fe-42f1ebeb88e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NFGameServerPlugin.h" />
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="NFSyncPosModule.h">
       <Filter>NFSyncPosModule</Filter>
+    </ClInclude>
+    <ClInclude Include="NFPumpkinBattleModule.h">
+      <Filter>PumpkinBattleModule</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,5 +67,8 @@
     <ClCompile Include="NFSyncPosModule.cpp">
       <Filter>NFSyncPosModule</Filter>
     </ClCompile>
+	<ClCompile Include="NFPumpkinBattleModule.cpp">
+		<Filter>PumpkinBattleModule</Filter>
+	</ClCompile>
   </ItemGroup>
 </Project>

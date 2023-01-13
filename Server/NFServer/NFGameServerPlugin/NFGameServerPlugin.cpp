@@ -32,6 +32,7 @@
 #include "NFNPCRefreshModule.h"
 #include "NFSyncPosModule.h"
 #include "NFCreateRoleModule.h"
+#include "NFPumpkinBattleModule.h"
 
 
 #ifdef NF_DYNAMIC_PLUGIN
@@ -69,15 +70,19 @@ void NFGameServerPlugin::Install()
 	REGISTER_MODULE(pPluginManager, NFINPCRefreshModule, NFNPCRefreshModule)
 	REGISTER_MODULE(pPluginManager, NFISyncPosModule, NFSyncPosModule)
 	REGISTER_MODULE(pPluginManager, NFICreateRoleModule, NFCreateRoleModule)
+
+    REGISTER_MODULE(pPluginManager, NFIPumpkinBattleModule, NFPumpkinBattleModule)
 }
 
 void NFGameServerPlugin::Uninstall()
 {
 	UNREGISTER_MODULE(pPluginManager, NFICreateRoleModule, NFCreateRoleModule)
-	UNREGISTER_MODULE(pPluginManager, NFISyncPosModule, NFSyncModule)
+	UNREGISTER_MODULE(pPluginManager, NFISyncPosModule, NFSyncPosModule)
 	UNREGISTER_MODULE(pPluginManager, NFINPCRefreshModule, NFNPCRefreshModule)
 	UNREGISTER_MODULE(pPluginManager, NFIPropertyConfigModule, NFPropertyConfigModule)
     UNREGISTER_MODULE(pPluginManager, NFIPropertyModule, NFPropertyModule)
     UNREGISTER_MODULE(pPluginManager, NFISceneProcessModule, NFSceneProcessModule)
     UNREGISTER_MODULE(pPluginManager, NFIGameServerModule, NFGameServerModule)
+
+    UNREGISTER_MODULE(pPluginManager, NFIPumpkinBattleModule, NFPumpkinBattleModule)
 }

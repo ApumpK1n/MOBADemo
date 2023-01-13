@@ -144,7 +144,7 @@ namespace NFrame
 
         public void SendMsg(int unMsgID, MemoryStream stream)
         {
-            //Debug.Log("send message:" + unMsgID);
+            Debug.Log("send message:" + unMsgID);
 
             if (mNetClient != null)
             {

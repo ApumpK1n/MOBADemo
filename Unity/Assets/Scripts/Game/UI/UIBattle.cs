@@ -26,6 +26,7 @@ namespace Pumpkin
             AttackCommand attackCommand = new AttackCommand();
             attackCommand.PlayerId = "233";
             attackCommand.SyncCmdType = AllCmdType.Attack;
+            attackCommand.TargetId = "";
             m_CommandQueueModule.AddCmdToSendQueue(attackCommand);
         }
     }

@@ -16,8 +16,8 @@ namespace Pumpkin
         [SerializeField]
         private Dictionary<int, string> m_Scenes = new Dictionary<int, string>()
         {
-            { 1, "MainMenu"},
-            { 2, "Map"}
+            { 2, "MainMenu"},
+            { 1, "Map"}
         };
 
         private NFIEventModule m_EventModule;
@@ -32,7 +32,7 @@ namespace Pumpkin
             m_EventModule = GameInit.Instance.PluginManager.FindModule<NFIEventModule>();
 
             m_EventModule.RegisterCallback((int)NFLoginModule.Event.SwapSceneSuccess, OnSwapScene);
-            m_EventModule.RegisterCallback((int)NFLoginModule.Event.SelectServerSuccess, OnTestSwapScene);
+            //m_EventModule.RegisterCallback((int)NFLoginModule.Event.SelectServerSuccess, OnTestSwapScene);
         }
 
         [Obsolete]
@@ -67,7 +67,7 @@ namespace Pumpkin
 
             UIModule module = GameInit.Instance.PluginManager.FindModule<UIModule>();
             module.SetUIRoot(FindObjectOfType<Canvas>().transform);
-            module.ShowUI<UIMainMenu>();
+            module.ShowUI<UIBattle>();
         }
     }
 }
