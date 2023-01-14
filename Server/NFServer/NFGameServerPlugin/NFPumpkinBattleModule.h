@@ -33,6 +33,7 @@ public:
 
 protected:
     void OnAttackCmd(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
+    void OnPerformCmd(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
 private:
     NFINetModule* m_pNetModule;

@@ -5,6 +5,6 @@ namespace Pumpkin
 {
     public class CommandHandlerAttribute : ClassAttribute
     {
-        public AllCmdType CommandHandlerType;
+        public NFMsg.AllCmdType CommandHandlerType;
     }
 }

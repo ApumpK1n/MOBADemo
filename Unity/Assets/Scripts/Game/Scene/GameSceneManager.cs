@@ -13,6 +13,8 @@ namespace Pumpkin
 {
     public class GameSceneManager : SingletonBehaviour<GameSceneManager>
     {
+        public Hero DefaultActor;
+
         [SerializeField]
         private Dictionary<int, string> m_Scenes = new Dictionary<int, string>()
         {
@@ -68,6 +70,8 @@ namespace Pumpkin
             UIModule module = GameInit.Instance.PluginManager.FindModule<UIModule>();
             module.SetUIRoot(FindObjectOfType<Canvas>().transform);
             module.ShowUI<UIBattle>();
+
+            DefaultActor = GameObject.FindObjectOfType<Hero>();
         }
     }
 }

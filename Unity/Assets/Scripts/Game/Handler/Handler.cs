@@ -18,7 +18,9 @@ namespace Pumpkin
 
             // find Actor
 
-
+            // now use Default Actor
+            Hero hero  = GameSceneManager.Instance.DefaultActor;
+            Run(hero, (T)cmd);
         }
 
         protected abstract void Run(Actor actor, T cmd);

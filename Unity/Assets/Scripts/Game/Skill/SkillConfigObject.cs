@@ -20,7 +20,7 @@ namespace Pumpkin
 
     public class SkillConfigObject : ScriptableObject
     {
-        // 技能ID: 英雄编号 + 技能ID 如: 1001
+        // 技能ID: 英雄编号 + 技能ID 如: 0101
         public uint SkillID;
         // 技能名称
         public string SkillName;

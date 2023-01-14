@@ -51,16 +51,16 @@ namespace Pumpkin
         public void AddCmdToSendQueue(Cmd cmdToSend, bool shouldAddToPlayerInputBuffer = true)
         {
             // TODO: Add Queue
-            C2G_FrameCmd frameCmd = new C2G_FrameCmd
+            FrameCmd frameCmd = new FrameCmd
             {
                 Frame = cmdToSend.Frame,
                 PlayerId = cmdToSend.PlayerId,
-                SyncCmdType = (int)cmdToSend.SyncCmdType
+                SyncCmdType = cmdToSend.SyncCmdType
             };
 
             switch (cmdToSend.SyncCmdType)
             {
-                case AllCmdType.Move:
+                case NFMsg.AllCmdType.Move:
                     MoveCommand move = (MoveCommand)cmdToSend;
                     C2G_MoveCmd moveCmd = new C2G_MoveCmd
                     {
@@ -74,7 +74,7 @@ namespace Pumpkin
                     };
                     m_C2SMsgModule.SendMsg(EGameMsgID.BattleClientCmd, moveCmd);
                     break;
-                case AllCmdType.Attack:
+                case NFMsg.AllCmdType.Attack:
                     AttackCommand attack = (AttackCommand)cmdToSend;
                     C2G_AttackCmd attackCmd = new C2G_AttackCmd
                     {

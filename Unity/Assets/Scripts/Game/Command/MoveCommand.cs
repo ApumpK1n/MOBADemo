@@ -10,7 +10,7 @@ namespace Pumpkin
     public class MoveCommand : Cmd
     {
 
-        public const AllCmdType CmdType = AllCmdType.Move;
+        public const NFMsg.AllCmdType CmdType = NFMsg.AllCmdType.Move;
 
         // Pos
         public float PosX;

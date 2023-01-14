@@ -218,15 +218,22 @@ message CreateRoom{
 }
 
 // Battle
+enum AllCmdType
+{
+	None = 0;
+	Move = 1;
+	Attack = 2;
+	Perform = 3;
+}
 
-message C2G_FrameCmd{
+message FrameCmd{
 	int32 Frame = 1;
-	int32 SyncCmdType = 2;
+	AllCmdType SyncCmdType = 2;
 	string PlayerId = 3;
 }
 
 message C2G_MoveCmd{
-	C2G_FrameCmd FrameCmd = 1;
+	FrameCmd FrameCmd = 1;
 
 	float PosX = 2;
 	float PosY = 3;
@@ -238,7 +245,20 @@ message C2G_MoveCmd{
 }
 
 message C2G_AttackCmd{
-	C2G_FrameCmd FrameCmd = 1;
+	FrameCmd FrameCmd = 1;
 
 	string TargetId = 2;
+}
+
+message G2C_AttackCmd{
+	FrameCmd FrameCmd = 1;
+}
+
+message C2G_PerformCmd{
+	FrameCmd FrameCmd = 1;
+	
+}
+
+message G2C_PerformCmd{
+	FrameCmd FrameCmd = 1;
 }

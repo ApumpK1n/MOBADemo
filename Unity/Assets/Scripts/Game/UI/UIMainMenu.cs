@@ -42,7 +42,7 @@ namespace Pumpkin
         {
             MoveCommand moveCommand = new MoveCommand();
             moveCommand.PlayerId = "233";
-            moveCommand.SyncCmdType = AllCmdType.Move;
+            moveCommand.SyncCmdType = NFMsg.AllCmdType.Move;
             m_CommandQueueModule.AddCmdToSendQueue(moveCommand);
         }
     }

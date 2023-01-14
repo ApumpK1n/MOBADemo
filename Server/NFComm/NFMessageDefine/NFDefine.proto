@@ -160,6 +160,7 @@ enum EGameMsgID
 	CREATE_ROOM								= 1000;
 	BATTLE_CLIENT_CMD						= 1001;
 	BATTLE_ATTACK_CMD						= 1002;
+	BATTLE_PERFORM_CMD						= 1003;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
