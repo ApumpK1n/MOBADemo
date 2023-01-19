@@ -12,7 +12,7 @@ namespace Pumpkin
             AddActorData(new ActorTransformData());
         }
 
-        protected override void AddActorComponet()
+        protected override void AddActorComponent()
         {
             gameObject.AddComponent<MoveComponent>();
         }

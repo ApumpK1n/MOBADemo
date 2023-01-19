@@ -18,7 +18,7 @@ namespace Pumpkin
             m_ActorDataComponet = GetComponent<ActorDataComponet>();
 
             AddActorData();
-            AddActorComponet();
+            AddActorComponent();
         }
 
         protected virtual void AddActorData()
@@ -26,7 +26,7 @@ namespace Pumpkin
 
         }
 
-        protected virtual void AddActorComponet()
+        protected virtual void AddActorComponent()
         {
 
         }
