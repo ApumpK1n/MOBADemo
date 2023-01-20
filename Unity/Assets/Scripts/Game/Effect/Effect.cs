@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,6 +35,9 @@ namespace Pumpkin
     {
         [HideInInspector]
         public virtual string Label => "Effect";
+
+        [ToggleGroup("Enabled", "$Label")]
+        public bool Enabled;
 
     }
 }

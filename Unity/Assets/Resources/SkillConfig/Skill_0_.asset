@@ -34,12 +34,15 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 1|Pumpkin.DamageEffect, Assembly-CSharp
+    - Name: Enabled
+      Entry: 5
+      Data: true
     - Name: DamageType
       Entry: 3
       Data: 0
     - Name: DamageValueFormula
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: 100
     - Name: CanCrit
       Entry: 5
       Data: false

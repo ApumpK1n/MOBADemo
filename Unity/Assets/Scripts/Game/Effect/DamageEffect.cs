@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,12 +10,13 @@ namespace Pumpkin
     {
         public override string Label => "造成伤害";
 
+        [ToggleGroup("Enabled")]
         public DamageType DamageType;
 
-        // 伤害取值
+        [ToggleGroup("Enabled"), LabelText("伤害取值")]
         public string DamageValueFormula;
 
-        //能否暴击
+        [ToggleGroup("Enabled"), LabelText("能否暴击")]
         public bool CanCrit;
 
     }

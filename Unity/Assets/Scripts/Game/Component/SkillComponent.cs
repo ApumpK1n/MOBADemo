@@ -12,10 +12,9 @@ namespace Pumpkin
 
         public override void Awake(object initData)
         {
-            base.Awake(initData);
             SkillConfig = initData as SkillConfigObject;
 
-            AddComponent<EffectComponent>(SkillConfig.Effects);
+            AddComponent<AssignEffectComponent>(SkillConfig.Effects);
 
             //激活被动技能
             if (SkillConfig.Type == SkillType.Passive)
