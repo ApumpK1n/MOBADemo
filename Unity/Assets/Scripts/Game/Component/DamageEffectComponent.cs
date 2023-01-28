@@ -12,7 +12,6 @@ namespace Pumpkin
         public override void Awake(object initData)
         {
             EffectConfig = initData as DamageEffect;
-            
         }
 
 

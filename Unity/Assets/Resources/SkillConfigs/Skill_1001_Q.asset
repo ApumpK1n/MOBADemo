@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed236dfe372e80d4a8f21e86e78623eb, type: 3}
-  m_Name: Skill_0_
+  m_Name: Skill_1001_Q
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -55,8 +55,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Id: 0
-  Name: 
+  Id: 1001
+  Name: Q
   Type: 0
   TargetType: 0
   CoolDown: 0

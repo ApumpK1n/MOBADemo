@@ -10,7 +10,6 @@ namespace Pumpkin
 
         public override void Awake()
         {
-            AddComponent<SkillComponent>();
             
         }
 

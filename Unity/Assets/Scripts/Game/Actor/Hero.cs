@@ -16,5 +16,12 @@ namespace Pumpkin
         {
             gameObject.AddComponent<MoveComponent>();
         }
+
+        protected override void AddActorAbility()
+        {
+            base.AddActorAbility();
+
+            Ability.Create<DamageAbility>();
+        }
     }
 }

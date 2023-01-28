@@ -12,12 +12,16 @@ namespace Pumpkin
         protected ActorStateMachine m_ActorStateMachine;
         protected ActorDataComponet m_ActorDataComponet;
 
+        protected FightAbility m_FightAbility;
+
+
         private void Awake()
         {
             m_ActorStateMachine = GetComponent<ActorStateMachine>();
             m_ActorDataComponet = GetComponent<ActorDataComponet>();
 
             AddActorData();
+            AddActorAbility();
             AddActorComponent();
         }
 
@@ -29,6 +33,13 @@ namespace Pumpkin
         protected virtual void AddActorComponent()
         {
 
+        }
+
+        protected virtual void AddActorAbility()
+        {
+            m_FightAbility = Ability.Create<FightAbility>();
+
+            LoadSkillWithCodeBind("SkillConfigs/Skill_1001_Q", KeyCode.Q);
         }
 
         protected void AddActorData<T>(T data) where T : ActorData
@@ -50,5 +61,18 @@ namespace Pumpkin
             return m_ActorDataComponet.GetActorData<T>();
         }
 
+        private SkillAbility LoadSkillWithCodeBind(string path, KeyCode bindCode)
+        {
+            var config = AssetLoad.Load<SkillConfigObject>(path);
+            var ability = m_FightAbility.AttachSkill(config);
+            //m_FightAbility.BindSkillInput(ability, bindCode);
+            return ability;
+        }
+
+        public void Preform(int skillId)
+        {
+
+        
+        }
     }
 }

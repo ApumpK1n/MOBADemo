@@ -7,26 +7,103 @@ namespace Pumpkin
     public class Ability
     {
         public Dictionary<Type, Component> Components { get; set; } = new Dictionary<Type, Component>();
+        public List<Ability> Children { get; private set; } = new List<Ability>();
 
+        #region 生命周期
+        public virtual void Awake()
+        {
+
+        }
+
+        public virtual void Awake(object initData)
+        {
+
+        }
+
+        public virtual void Start()
+        {
+
+        }
+
+        public virtual void Start(object initData)
+        {
+
+        }
+
+        public virtual void OnSetParent(Ability preParent, Ability nowParent)
+        {
+
+        }
+
+        public virtual void Update()
+        {
+
+        }
+
+        public virtual void OnDestroy()
+        {
+
+        }
+        #endregion
 
         #region 创建实例
-        public static Ability NewEntity(Type entityType, long id = 0)
+        public static Ability Create(Type type)
         {
-            var ability = Activator.CreateInstance(entityType) as Ability;
-            //entity.InstanceId = IdFactory.NewInstanceId();
+            var ability = NewAbility(type);
+            InitAbility(ability);
+            return ability;
+        }
+
+        public static T Create<T>() where T : Ability
+        {
+            Type type = typeof(T);
+            Ability ability = Create(type);
+            return ability as T;
+        }
+
+        private static Ability NewAbility(Type type, long id = 0)
+        {
+            var ability = Activator.CreateInstance(type) as Ability;
+            //ability.InstanceId = IdFactory.NewInstanceId();
             //if (id == 0) entity.Id = entity.InstanceId;
             return ability;
         }
 
-        private static void InitAbility(Ability entity, Ability parent)
+        private static void InitAbility(Ability ability)
         {
-            //var preParent = entity.Parent;
-            //parent.SetChild(entity);
-            ////if (preParent == null)
-            //{
-            //    entity.Awake();
-            //}
-            //entity.Start();
+            // TODO 其他生命周期
+            ability.Awake();
+        }
+
+        private static void InitAbility(Ability ability, object initData)
+        {
+            // TODO 其他生命周期
+            ability.Awake(initData);
+        }
+
+        public Ability AddChild(Type type)
+        {
+            var ability = NewAbility(type);
+
+            InitAbility(ability);
+            return ability;
+        }
+
+        public Ability AddChild<T>(object initData)
+        {
+            Type type = typeof(T);
+            var ability = NewAbility(type);
+
+            InitAbility(ability);
+            return ability;
+        }
+
+        public Ability AddChild(Type type, object initData)
+        {
+            var ability = NewAbility(type);
+
+            InitAbility(ability, initData);
+            return ability;
         }
 
         #endregion
@@ -57,7 +134,7 @@ namespace Pumpkin
         {
             var component = Components[typeof(T)];
             if (component.Enable) component.Enable = false;
-            //Component.Destroy(component);
+            component.OnDestroy();
             Components.Remove(typeof(T));
         }
 
