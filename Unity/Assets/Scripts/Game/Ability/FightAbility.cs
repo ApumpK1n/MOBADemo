@@ -8,7 +8,7 @@ namespace Pumpkin
     public class FightAbility : Ability
     {
         public Dictionary<string, SkillAbility> NameSkills { get; set; } = new Dictionary<string, SkillAbility>();
-        public Dictionary<uint, SkillAbility> IdSkills { get; set; } = new Dictionary<uint, SkillAbility>();
+        public Dictionary<int, SkillAbility> IdSkills { get; set; } = new Dictionary<int, SkillAbility>();
 
         public override void Awake()
         {
@@ -18,7 +18,7 @@ namespace Pumpkin
 
         public SkillAbility AttachSkill(object configObject)
         {
-            var skill = AttachAbility<SkillAbility>(configObject);
+            SkillAbility skill = AttachAbility<SkillAbility>(configObject);
             NameSkills.Add(skill.SkillConfig.Name, skill);
             IdSkills.Add(skill.SkillConfig.Id, skill);
             return skill;
@@ -30,7 +30,7 @@ namespace Pumpkin
             return ability as T;
         }
 
-        public bool PerformSkill(uint skillId)
+        public bool PerformSkill(int skillId)
         {
             if (IdSkills.TryGetValue(skillId, out SkillAbility ability))
             {

@@ -7,6 +7,7 @@ namespace Pumpkin
     public class UIBattle : UIDialog
     {
         public Button m_AttackButton;
+        public Button m_PerformButton;
 
         private C2SMsgModule m_C2SMsgModule;
         private CommandQueueModule m_CommandQueueModule;
@@ -15,6 +16,7 @@ namespace Pumpkin
         {
             base.OnLoad();
             m_AttackButton.onClick.AddListener(OnAttackButton);
+            m_PerformButton.onClick.AddListener(OnPerformButton);
 
             m_C2SMsgModule = GameInit.Instance.PluginManager.FindModule<C2SMsgModule>();
 
@@ -27,6 +29,15 @@ namespace Pumpkin
             attackCommand.PlayerId = "233";
             attackCommand.SyncCmdType = NFMsg.AllCmdType.Attack;
             attackCommand.TargetId = "";
+            m_CommandQueueModule.AddCmdToSendQueue(attackCommand);
+        }
+
+        private void OnPerformButton()
+        {
+            PerformCommand attackCommand = new PerformCommand();
+            attackCommand.PlayerId = "233";
+            attackCommand.SyncCmdType = NFMsg.AllCmdType.Perform;
+            attackCommand.SkillId = 1001;
             m_CommandQueueModule.AddCmdToSendQueue(attackCommand);
         }
     }

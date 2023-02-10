@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Pumpkin.Utility;
 
 namespace Pumpkin
 {
@@ -21,6 +22,19 @@ namespace Pumpkin
             m_AnimationData = GetComponent<AnimationData>();
 
             ParseAnimationData();
+
+            EventManager.Instance.AddListener(ComponentEvent.AnimationEvent, OnTriggerAnimation);
+        }
+
+        public void OnTriggerAnimation(object sender, EventArgs e)
+        {
+            ComponentAnimationTriggerEventArgs args = e as ComponentAnimationTriggerEventArgs;
+            PlayAnimation(args.AnimationClip);
+        }
+
+        private void PlayAnimation(AnimationClip animationClip)
+        {
+            m_Animancer.Play(animationClip);
         }
 
 

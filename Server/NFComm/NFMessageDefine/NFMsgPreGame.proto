@@ -256,9 +256,10 @@ message G2C_AttackCmd{
 
 message C2G_PerformCmd{
 	FrameCmd FrameCmd = 1;
-	
+	int32 SkillId = 2;
 }
 
 message G2C_PerformCmd{
 	FrameCmd FrameCmd = 1;
+	int32 SkillId = 2;
 }

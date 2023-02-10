@@ -42,6 +42,7 @@ namespace Pumpkin
         public override void Init()
         {
             m_NetModule.AddReceiveCallBack((int)NFMsg.EGameMsgID.BattleAttackCmd, OnBattleAttackCmd);
+            m_NetModule.AddReceiveCallBack((int)NFMsg.EGameMsgID.BattlePerformCmd, OnBattlePerformCmd);
         }
 
         public override void Shut()
@@ -59,6 +60,20 @@ namespace Pumpkin
             attackCommand.Frame = xData.FrameCmd.Frame;
             attackCommand.SyncCmdType = xData.FrameCmd.SyncCmdType;
             m_CmdDispatcherModule.Handle(attackCommand);
+        }
+
+        private void OnBattlePerformCmd(int id, MemoryStream stream)
+        {
+            NFMsg.MsgBase xMsg = NFMsg.MsgBase.Parser.ParseFrom(stream);
+            NFMsg.G2C_PerformCmd xData = NFMsg.G2C_PerformCmd.Parser.ParseFrom(xMsg.MsgData);
+
+            // TODO 接入数据处理
+            PerformCommand performCommand = new PerformCommand();
+            performCommand.Frame = xData.FrameCmd.Frame;
+            performCommand.SyncCmdType = xData.FrameCmd.SyncCmdType;
+            performCommand.SkillId = xData.SkillId;
+
+            m_CmdDispatcherModule.Handle(performCommand);
         }
     }
 }

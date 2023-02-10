@@ -57,7 +57,7 @@ MonoBehaviour:
       Data: 
   Id: 1001
   Name: Q
-  Type: 0
+  Type: 1
   TargetType: 0
   CoolDown: 0
   EffectTypeName: "(\u6DFB\u52A0\u6548\u679C)"

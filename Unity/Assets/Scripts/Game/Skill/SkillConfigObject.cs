@@ -36,7 +36,7 @@ namespace Pumpkin
     {
         // 技能ID: 英雄编号 + 技能ID 如: 0101
         [LabelText("技能ID"), DelayedProperty]
-        public uint Id;
+        public int Id;
         // 技能名称
         public string Name;
         // 技能类型

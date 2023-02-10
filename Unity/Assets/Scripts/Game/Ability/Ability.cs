@@ -35,8 +35,19 @@ namespace Pumpkin
 
         }
 
-        public virtual void Update()
+        public void Update(float delta)
         {
+            // 先更自身组件
+            foreach(var keyValue in Components)
+            {
+                keyValue.Value.Update(delta);
+            }
+            
+            //再遍历子节点
+            foreach(var ability in Children)
+            {
+                ability.Update(delta);
+            }
 
         }
 
@@ -85,6 +96,19 @@ namespace Pumpkin
         {
             var ability = NewAbility(type);
 
+            Children.Add(ability);
+
+            InitAbility(ability);
+            return ability;
+        }
+
+        public Ability AddChild<T>()
+        {
+            Type type = typeof(T);
+            var ability = NewAbility(type);
+
+            Children.Add(ability);
+
             InitAbility(ability);
             return ability;
         }
@@ -94,13 +118,17 @@ namespace Pumpkin
             Type type = typeof(T);
             var ability = NewAbility(type);
 
-            InitAbility(ability);
+            Children.Add(ability);
+
+            InitAbility(ability, initData);
             return ability;
         }
 
         public Ability AddChild(Type type, object initData)
         {
             var ability = NewAbility(type);
+
+            Children.Add(ability);
 
             InitAbility(ability, initData);
             return ability;

@@ -19,7 +19,7 @@ namespace Pumpkin
         public bool Perform()
         {
             PrePerform();
-
+            SkillComponent.Activate();
             OnPerform();
             return true;
         }

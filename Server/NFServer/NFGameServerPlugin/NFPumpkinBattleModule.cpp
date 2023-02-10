@@ -22,6 +22,7 @@ bool NFPumpkinBattleModule::Execute()
 bool NFPumpkinBattleModule::AfterInit()
 {
 	m_pNetModule->AddReceiveCallBack(NFMsg::BATTLE_ATTACK_CMD, this, &NFPumpkinBattleModule::OnAttackCmd);
+	m_pNetModule->AddReceiveCallBack(NFMsg::BATTLE_PERFORM_CMD, this, &NFPumpkinBattleModule::OnPerformCmd);
 
 	return true;
 }
@@ -59,6 +60,7 @@ void NFPumpkinBattleModule::OnPerformCmd(const NFSOCK sockIndex, const int msgID
 	if (pNetObject) {
 		NFMsg::G2C_PerformCmd xSendMsg;
 		xSendMsg.mutable_framecmd()->CopyFrom(xMsg.framecmd());
+		xSendMsg.set_skillid(1001);
 		m_pNetModule->SendMsgPB(NFMsg::BATTLE_PERFORM_CMD, xSendMsg, sockIndex);
 	}
 

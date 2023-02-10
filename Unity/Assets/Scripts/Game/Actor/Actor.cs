@@ -71,8 +71,13 @@ namespace Pumpkin
 
         public void Preform(int skillId)
         {
+            m_FightAbility.PerformSkill(skillId);
 
-        
+        }
+
+        private void Update()
+        {
+            m_FightAbility.Update(Time.deltaTime);
         }
     }
 }

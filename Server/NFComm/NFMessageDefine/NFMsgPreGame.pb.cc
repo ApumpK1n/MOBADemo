@@ -826,12 +826,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_NFMsgPreGame_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::NFMsg::C2G_PerformCmd, framecmd_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::C2G_PerformCmd, skillid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::NFMsg::G2C_PerformCmd, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::NFMsg::G2C_PerformCmd, framecmd_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::G2C_PerformCmd, skillid_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::NFMsg::ServerInfoReport)},
@@ -862,7 +864,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 228, -1, sizeof(::NFMsg::C2G_AttackCmd)},
   { 235, -1, sizeof(::NFMsg::G2C_AttackCmd)},
   { 241, -1, sizeof(::NFMsg::C2G_PerformCmd)},
-  { 247, -1, sizeof(::NFMsg::G2C_PerformCmd)},
+  { 248, -1, sizeof(::NFMsg::G2C_PerformCmd)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -975,17 +977,18 @@ const char descriptor_table_protodef_NFMsgPreGame_2eproto[] PROTOBUF_SECTION_VAR
   "\022\022\n\nTargetPosZ\030\007 \001(\002\"D\n\rC2G_AttackCmd\022!\n"
   "\010FrameCmd\030\001 \001(\0132\017.NFMsg.FrameCmd\022\020\n\010Targ"
   "etId\030\002 \001(\t\"2\n\rG2C_AttackCmd\022!\n\010FrameCmd\030"
-  "\001 \001(\0132\017.NFMsg.FrameCmd\"3\n\016C2G_PerformCmd"
-  "\022!\n\010FrameCmd\030\001 \001(\0132\017.NFMsg.FrameCmd\"3\n\016G"
-  "2C_PerformCmd\022!\n\010FrameCmd\030\001 \001(\0132\017.NFMsg."
-  "FrameCmd*Z\n\014EServerState\022\r\n\tEST_CRASH\020\000\022"
-  "\016\n\nEST_NARMAL\020\001\022\014\n\010EST_BUSY\020\002\022\014\n\010EST_FIR"
-  "E\020\003\022\017\n\013EST_MAINTEN\020\004*J\n\nELoginMode\022\r\n\tEL"
-  "M_LOGIN\020\000\022\020\n\014ELM_REGISTER\020\001\022\033\n\027ELM_AUTO_"
-  "REGISTER_LOGIN\020\002*@\n\021ReqServerListType\022\025\n"
-  "\021RSLT_WORLD_SERVER\020\000\022\024\n\020RSLT_GAMES_ERVER"
-  "\020\001*9\n\nAllCmdType\022\010\n\004None\020\000\022\010\n\004Move\020\001\022\n\n\006"
-  "Attack\020\002\022\013\n\007Perform\020\003b\006proto3"
+  "\001 \001(\0132\017.NFMsg.FrameCmd\"D\n\016C2G_PerformCmd"
+  "\022!\n\010FrameCmd\030\001 \001(\0132\017.NFMsg.FrameCmd\022\017\n\007S"
+  "killId\030\002 \001(\005\"D\n\016G2C_PerformCmd\022!\n\010FrameC"
+  "md\030\001 \001(\0132\017.NFMsg.FrameCmd\022\017\n\007SkillId\030\002 \001"
+  "(\005*Z\n\014EServerState\022\r\n\tEST_CRASH\020\000\022\016\n\nEST"
+  "_NARMAL\020\001\022\014\n\010EST_BUSY\020\002\022\014\n\010EST_FIRE\020\003\022\017\n"
+  "\013EST_MAINTEN\020\004*J\n\nELoginMode\022\r\n\tELM_LOGI"
+  "N\020\000\022\020\n\014ELM_REGISTER\020\001\022\033\n\027ELM_AUTO_REGIST"
+  "ER_LOGIN\020\002*@\n\021ReqServerListType\022\025\n\021RSLT_"
+  "WORLD_SERVER\020\000\022\024\n\020RSLT_GAMES_ERVER\020\001*9\n\n"
+  "AllCmdType\022\010\n\004None\020\000\022\010\n\004Move\020\001\022\n\n\006Attack"
+  "\020\002\022\013\n\007Perform\020\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_NFMsgPreGame_2eproto_deps[2] = {
   &::descriptor_table_NFDefine_2eproto,
@@ -1025,7 +1028,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFM
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_NFMsgPreGame_2eproto_once;
 static bool descriptor_table_NFMsgPreGame_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_NFMsgPreGame_2eproto = {
-  &descriptor_table_NFMsgPreGame_2eproto_initialized, descriptor_table_protodef_NFMsgPreGame_2eproto, "NFMsgPreGame.proto", 3509,
+  &descriptor_table_NFMsgPreGame_2eproto_initialized, descriptor_table_protodef_NFMsgPreGame_2eproto, "NFMsgPreGame.proto", 3543,
   &descriptor_table_NFMsgPreGame_2eproto_once, descriptor_table_NFMsgPreGame_2eproto_sccs, descriptor_table_NFMsgPreGame_2eproto_deps, 29, 2,
   schemas, file_default_instances, TableStruct_NFMsgPreGame_2eproto::offsets,
   file_level_metadata_NFMsgPreGame_2eproto, 29, file_level_enum_descriptors_NFMsgPreGame_2eproto, file_level_service_descriptors_NFMsgPreGame_2eproto,
@@ -8843,12 +8846,15 @@ C2G_PerformCmd::C2G_PerformCmd(const C2G_PerformCmd& from)
   } else {
     framecmd_ = nullptr;
   }
+  skillid_ = from.skillid_;
   // @@protoc_insertion_point(copy_constructor:NFMsg.C2G_PerformCmd)
 }
 
 void C2G_PerformCmd::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_C2G_PerformCmd_NFMsgPreGame_2eproto.base);
-  framecmd_ = nullptr;
+  ::memset(&framecmd_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&skillid_) -
+      reinterpret_cast<char*>(&framecmd_)) + sizeof(skillid_));
 }
 
 C2G_PerformCmd::~C2G_PerformCmd() {
@@ -8879,6 +8885,7 @@ void C2G_PerformCmd::Clear() {
     delete framecmd_;
   }
   framecmd_ = nullptr;
+  skillid_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -8893,6 +8900,13 @@ const char* C2G_PerformCmd::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_framecmd(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 SkillId = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          skillid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8930,6 +8944,12 @@ failure:
         1, _Internal::framecmd(this), target, stream);
   }
 
+  // int32 SkillId = 2;
+  if (this->skillid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_skillid(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -8951,6 +8971,13 @@ size_t C2G_PerformCmd::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *framecmd_);
+  }
+
+  // int32 SkillId = 2;
+  if (this->skillid() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_skillid());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8987,6 +9014,9 @@ void C2G_PerformCmd::MergeFrom(const C2G_PerformCmd& from) {
   if (from.has_framecmd()) {
     _internal_mutable_framecmd()->::NFMsg::FrameCmd::MergeFrom(from._internal_framecmd());
   }
+  if (from.skillid() != 0) {
+    _internal_set_skillid(from._internal_skillid());
+  }
 }
 
 void C2G_PerformCmd::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -9011,6 +9041,7 @@ void C2G_PerformCmd::InternalSwap(C2G_PerformCmd* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(framecmd_, other->framecmd_);
+  swap(skillid_, other->skillid_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata C2G_PerformCmd::GetMetadata() const {
@@ -9047,12 +9078,15 @@ G2C_PerformCmd::G2C_PerformCmd(const G2C_PerformCmd& from)
   } else {
     framecmd_ = nullptr;
   }
+  skillid_ = from.skillid_;
   // @@protoc_insertion_point(copy_constructor:NFMsg.G2C_PerformCmd)
 }
 
 void G2C_PerformCmd::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_G2C_PerformCmd_NFMsgPreGame_2eproto.base);
-  framecmd_ = nullptr;
+  ::memset(&framecmd_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&skillid_) -
+      reinterpret_cast<char*>(&framecmd_)) + sizeof(skillid_));
 }
 
 G2C_PerformCmd::~G2C_PerformCmd() {
@@ -9083,6 +9117,7 @@ void G2C_PerformCmd::Clear() {
     delete framecmd_;
   }
   framecmd_ = nullptr;
+  skillid_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -9097,6 +9132,13 @@ const char* G2C_PerformCmd::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_framecmd(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 SkillId = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          skillid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9134,6 +9176,12 @@ failure:
         1, _Internal::framecmd(this), target, stream);
   }
 
+  // int32 SkillId = 2;
+  if (this->skillid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_skillid(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -9155,6 +9203,13 @@ size_t G2C_PerformCmd::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *framecmd_);
+  }
+
+  // int32 SkillId = 2;
+  if (this->skillid() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_skillid());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9191,6 +9246,9 @@ void G2C_PerformCmd::MergeFrom(const G2C_PerformCmd& from) {
   if (from.has_framecmd()) {
     _internal_mutable_framecmd()->::NFMsg::FrameCmd::MergeFrom(from._internal_framecmd());
   }
+  if (from.skillid() != 0) {
+    _internal_set_skillid(from._internal_skillid());
+  }
 }
 
 void G2C_PerformCmd::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -9215,6 +9273,7 @@ void G2C_PerformCmd::InternalSwap(G2C_PerformCmd* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(framecmd_, other->framecmd_);
+  swap(skillid_, other->skillid_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata G2C_PerformCmd::GetMetadata() const {

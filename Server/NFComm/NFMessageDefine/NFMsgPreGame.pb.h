@@ -5094,6 +5094,7 @@ class C2G_PerformCmd :
 
   enum : int {
     kFrameCmdFieldNumber = 1,
+    kSkillIdFieldNumber = 2,
   };
   // .NFMsg.FrameCmd FrameCmd = 1;
   bool has_framecmd() const;
@@ -5110,12 +5111,22 @@ class C2G_PerformCmd :
   ::NFMsg::FrameCmd* _internal_mutable_framecmd();
   public:
 
+  // int32 SkillId = 2;
+  void clear_skillid();
+  ::PROTOBUF_NAMESPACE_ID::int32 skillid() const;
+  void set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_skillid() const;
+  void _internal_set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:NFMsg.C2G_PerformCmd)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::NFMsg::FrameCmd* framecmd_;
+  ::PROTOBUF_NAMESPACE_ID::int32 skillid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgPreGame_2eproto;
 };
@@ -5228,6 +5239,7 @@ class G2C_PerformCmd :
 
   enum : int {
     kFrameCmdFieldNumber = 1,
+    kSkillIdFieldNumber = 2,
   };
   // .NFMsg.FrameCmd FrameCmd = 1;
   bool has_framecmd() const;
@@ -5244,12 +5256,22 @@ class G2C_PerformCmd :
   ::NFMsg::FrameCmd* _internal_mutable_framecmd();
   public:
 
+  // int32 SkillId = 2;
+  void clear_skillid();
+  ::PROTOBUF_NAMESPACE_ID::int32 skillid() const;
+  void set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_skillid() const;
+  void _internal_set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:NFMsg.G2C_PerformCmd)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::NFMsg::FrameCmd* framecmd_;
+  ::PROTOBUF_NAMESPACE_ID::int32 skillid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgPreGame_2eproto;
 };
@@ -9399,6 +9421,26 @@ inline void C2G_PerformCmd::set_allocated_framecmd(::NFMsg::FrameCmd* framecmd) 
   // @@protoc_insertion_point(field_set_allocated:NFMsg.C2G_PerformCmd.FrameCmd)
 }
 
+// int32 SkillId = 2;
+inline void C2G_PerformCmd::clear_skillid() {
+  skillid_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 C2G_PerformCmd::_internal_skillid() const {
+  return skillid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 C2G_PerformCmd::skillid() const {
+  // @@protoc_insertion_point(field_get:NFMsg.C2G_PerformCmd.SkillId)
+  return _internal_skillid();
+}
+inline void C2G_PerformCmd::_internal_set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  skillid_ = value;
+}
+inline void C2G_PerformCmd::set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_skillid(value);
+  // @@protoc_insertion_point(field_set:NFMsg.C2G_PerformCmd.SkillId)
+}
+
 // -------------------------------------------------------------------
 
 // G2C_PerformCmd
@@ -9461,6 +9503,26 @@ inline void G2C_PerformCmd::set_allocated_framecmd(::NFMsg::FrameCmd* framecmd) 
   }
   framecmd_ = framecmd;
   // @@protoc_insertion_point(field_set_allocated:NFMsg.G2C_PerformCmd.FrameCmd)
+}
+
+// int32 SkillId = 2;
+inline void G2C_PerformCmd::clear_skillid() {
+  skillid_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 G2C_PerformCmd::_internal_skillid() const {
+  return skillid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 G2C_PerformCmd::skillid() const {
+  // @@protoc_insertion_point(field_get:NFMsg.G2C_PerformCmd.SkillId)
+  return _internal_skillid();
+}
+inline void G2C_PerformCmd::_internal_set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  skillid_ = value;
+}
+inline void G2C_PerformCmd::set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_skillid(value);
+  // @@protoc_insertion_point(field_set:NFMsg.G2C_PerformCmd.SkillId)
 }
 
 #ifdef __GNUC__

@@ -8,7 +8,7 @@ namespace Pumpkin
     {
         protected override void Run(Actor actor, PerformCommand cmd)
         {
-        
+            actor.Preform(cmd.SkillId);
         }
     }
 }

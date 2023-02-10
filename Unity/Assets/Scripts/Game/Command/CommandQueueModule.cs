@@ -83,6 +83,15 @@ namespace Pumpkin
                     };
                     m_C2SMsgModule.SendMsg(EGameMsgID.BattleAttackCmd, attackCmd);
                     break;
+                case NFMsg.AllCmdType.Perform:
+                    PerformCommand perform = (PerformCommand)cmdToSend;
+                    C2G_PerformCmd performCmd = new C2G_PerformCmd
+                    {
+                        FrameCmd = frameCmd,
+                        SkillId = perform.SkillId,
+                    };
+                    m_C2SMsgModule.SendMsg(EGameMsgID.BattlePerformCmd, performCmd);
+                    break;
             }
         }
     }
