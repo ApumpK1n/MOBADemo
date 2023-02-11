@@ -34,11 +34,11 @@ namespace Pumpkin
 
         private void OnPerformButton()
         {
-            PerformCommand attackCommand = new PerformCommand();
-            attackCommand.PlayerId = "233";
-            attackCommand.SyncCmdType = NFMsg.AllCmdType.Perform;
-            attackCommand.SkillId = 1001;
-            m_CommandQueueModule.AddCmdToSendQueue(attackCommand);
+            PerformCommand performCommand = new PerformCommand();
+            performCommand.PlayerId = "233";
+            performCommand.SyncCmdType = NFMsg.AllCmdType.Perform;
+            performCommand.SkillId = 1001;
+            m_CommandQueueModule.AddCmdToSendQueue(performCommand);
         }
     }
 }

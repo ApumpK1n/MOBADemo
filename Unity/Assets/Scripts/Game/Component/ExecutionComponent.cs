@@ -10,7 +10,7 @@ namespace Pumpkin
 
         private List<ExecutionClipComponent> m_ExecutionClipComponents = new List<ExecutionClipComponent>();
         private float m_Timer;
-        private bool m_IsExecuting;
+        private bool m_IsExecuting = false;
         private int m_Index;
 
         public override void Awake(object initData)
@@ -27,6 +27,8 @@ namespace Pumpkin
         public void BeginExecute()
         {
             if (ExecutionObject == null) return;
+
+            if (m_IsExecuting) return;
 
             m_Timer = 0;
             m_IsExecuting = true;

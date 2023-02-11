@@ -65,7 +65,7 @@ namespace Pumpkin
         {
             var config = AssetLoad.Load<SkillConfigObject>(path);
             var ability = m_FightAbility.AttachSkill(config);
-            //m_FightAbility.BindSkillInput(ability, bindCode);
+            m_FightAbility.BindSkillInput(ability, bindCode);
             return ability;
         }
 

@@ -60,7 +60,8 @@ void NFPumpkinBattleModule::OnPerformCmd(const NFSOCK sockIndex, const int msgID
 	if (pNetObject) {
 		NFMsg::G2C_PerformCmd xSendMsg;
 		xSendMsg.mutable_framecmd()->CopyFrom(xMsg.framecmd());
-		xSendMsg.set_skillid(1001);
+		// TODO: 验证技能ID
+		xSendMsg.set_skillid(xMsg.skillid());
 		m_pNetModule->SendMsgPB(NFMsg::BATTLE_PERFORM_CMD, xSendMsg, sockIndex);
 	}
 
