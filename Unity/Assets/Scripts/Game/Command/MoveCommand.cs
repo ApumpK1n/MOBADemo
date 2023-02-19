@@ -12,20 +12,20 @@ namespace Pumpkin
 
         public const NFMsg.AllCmdType CmdType = NFMsg.AllCmdType.Move;
 
+        public int SceneId;
+
         // Pos
-        public float PosX;
-        public float PosY;
-        public float PosZ;
+        public Vector3 Pos;
 
         // TargetPos
-        public float TargetPosX;
-        public float TargetPosY;
-        public float TargetPosZ;
+        public Vector3 TargetPos;
 
         // Rotation
         public float RotX;
         public float RotY;
         public float RotZ;
         public float RotW;
+
+        public List<Vector3> MovePoints;
     }
 }

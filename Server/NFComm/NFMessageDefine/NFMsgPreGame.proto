@@ -242,6 +242,14 @@ message C2G_MoveCmd{
 	float TargetPosX = 5;
 	float TargetPosY = 6;
 	float TargetPosZ = 7;
+
+	int32 SceneId = 8;
+}
+
+message G2C_MoveCmd{
+	FrameCmd FrameCmd = 1;
+
+	repeated Vector3 PathPoints = 2;
 }
 
 message C2G_AttackCmd{

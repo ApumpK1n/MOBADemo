@@ -65,14 +65,15 @@ namespace Pumpkin
                     C2G_MoveCmd moveCmd = new C2G_MoveCmd
                     {
                         FrameCmd = frameCmd,
-                        PosX = move.PosX,
-                        PosY = move.PosY,
-                        PosZ = move.PosZ,
-                        TargetPosX = move.TargetPosX,
-                        TargetPosY = move.TargetPosY,
-                        TargetPosZ = move.TargetPosZ
+                        PosX = move.Pos.x,
+                        PosY = move.Pos.y,
+                        PosZ = move.Pos.z,
+                        TargetPosX = move.TargetPos.x,
+                        TargetPosY = move.TargetPos.y,
+                        TargetPosZ = move.TargetPos.z,
+                        SceneId = move.SceneId,
                     };
-                    m_C2SMsgModule.SendMsg(EGameMsgID.BattleClientCmd, moveCmd);
+                    m_C2SMsgModule.SendMsg(EGameMsgID.BattleMoveCmd, moveCmd);
                     break;
                 case NFMsg.AllCmdType.Attack:
                     AttackCommand attack = (AttackCommand)cmdToSend;

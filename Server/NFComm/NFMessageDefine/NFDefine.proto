@@ -161,6 +161,7 @@ enum EGameMsgID
 	BATTLE_CLIENT_CMD						= 1001;
 	BATTLE_ATTACK_CMD						= 1002;
 	BATTLE_PERFORM_CMD						= 1003;
+	BATTLE_MOVE_CMD							= 1004;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

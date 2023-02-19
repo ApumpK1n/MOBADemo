@@ -50,7 +50,7 @@ struct TableStruct_NFMsgPreGame_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[29]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[30]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -88,6 +88,9 @@ extern FrameCmdDefaultTypeInternal _FrameCmd_default_instance_;
 class G2C_AttackCmd;
 class G2C_AttackCmdDefaultTypeInternal;
 extern G2C_AttackCmdDefaultTypeInternal _G2C_AttackCmd_default_instance_;
+class G2C_MoveCmd;
+class G2C_MoveCmdDefaultTypeInternal;
+extern G2C_MoveCmdDefaultTypeInternal _G2C_MoveCmd_default_instance_;
 class G2C_PerformCmd;
 class G2C_PerformCmdDefaultTypeInternal;
 extern G2C_PerformCmdDefaultTypeInternal _G2C_PerformCmd_default_instance_;
@@ -157,6 +160,7 @@ template<> ::NFMsg::C2G_PerformCmd* Arena::CreateMaybeMessage<::NFMsg::C2G_Perfo
 template<> ::NFMsg::CreateRoom* Arena::CreateMaybeMessage<::NFMsg::CreateRoom>(Arena*);
 template<> ::NFMsg::FrameCmd* Arena::CreateMaybeMessage<::NFMsg::FrameCmd>(Arena*);
 template<> ::NFMsg::G2C_AttackCmd* Arena::CreateMaybeMessage<::NFMsg::G2C_AttackCmd>(Arena*);
+template<> ::NFMsg::G2C_MoveCmd* Arena::CreateMaybeMessage<::NFMsg::G2C_MoveCmd>(Arena*);
 template<> ::NFMsg::G2C_PerformCmd* Arena::CreateMaybeMessage<::NFMsg::G2C_PerformCmd>(Arena*);
 template<> ::NFMsg::ReqAccountLogin* Arena::CreateMaybeMessage<::NFMsg::ReqAccountLogin>(Arena*);
 template<> ::NFMsg::ReqAccountLogout* Arena::CreateMaybeMessage<::NFMsg::ReqAccountLogout>(Arena*);
@@ -4614,6 +4618,7 @@ class C2G_MoveCmd :
     kTargetPosXFieldNumber = 5,
     kTargetPosYFieldNumber = 6,
     kTargetPosZFieldNumber = 7,
+    kSceneIdFieldNumber = 8,
   };
   // .NFMsg.FrameCmd FrameCmd = 1;
   bool has_framecmd() const;
@@ -4684,6 +4689,15 @@ class C2G_MoveCmd :
   void _internal_set_targetposz(float value);
   public:
 
+  // int32 SceneId = 8;
+  void clear_sceneid();
+  ::PROTOBUF_NAMESPACE_ID::int32 sceneid() const;
+  void set_sceneid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_sceneid() const;
+  void _internal_set_sceneid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:NFMsg.C2G_MoveCmd)
  private:
   class _Internal;
@@ -4696,6 +4710,161 @@ class C2G_MoveCmd :
   float targetposx_;
   float targetposy_;
   float targetposz_;
+  ::PROTOBUF_NAMESPACE_ID::int32 sceneid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgPreGame_2eproto;
+};
+// -------------------------------------------------------------------
+
+class G2C_MoveCmd :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.G2C_MoveCmd) */ {
+ public:
+  G2C_MoveCmd();
+  virtual ~G2C_MoveCmd();
+
+  G2C_MoveCmd(const G2C_MoveCmd& from);
+  G2C_MoveCmd(G2C_MoveCmd&& from) noexcept
+    : G2C_MoveCmd() {
+    *this = ::std::move(from);
+  }
+
+  inline G2C_MoveCmd& operator=(const G2C_MoveCmd& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline G2C_MoveCmd& operator=(G2C_MoveCmd&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const G2C_MoveCmd& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const G2C_MoveCmd* internal_default_instance() {
+    return reinterpret_cast<const G2C_MoveCmd*>(
+               &_G2C_MoveCmd_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(G2C_MoveCmd& a, G2C_MoveCmd& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(G2C_MoveCmd* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline G2C_MoveCmd* New() const final {
+    return CreateMaybeMessage<G2C_MoveCmd>(nullptr);
+  }
+
+  G2C_MoveCmd* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<G2C_MoveCmd>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const G2C_MoveCmd& from);
+  void MergeFrom(const G2C_MoveCmd& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(G2C_MoveCmd* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.G2C_MoveCmd";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgPreGame_2eproto);
+    return ::descriptor_table_NFMsgPreGame_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPathPointsFieldNumber = 2,
+    kFrameCmdFieldNumber = 1,
+  };
+  // repeated .NFMsg.Vector3 PathPoints = 2;
+  int pathpoints_size() const;
+  private:
+  int _internal_pathpoints_size() const;
+  public:
+  void clear_pathpoints();
+  ::NFMsg::Vector3* mutable_pathpoints(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::Vector3 >*
+      mutable_pathpoints();
+  private:
+  const ::NFMsg::Vector3& _internal_pathpoints(int index) const;
+  ::NFMsg::Vector3* _internal_add_pathpoints();
+  public:
+  const ::NFMsg::Vector3& pathpoints(int index) const;
+  ::NFMsg::Vector3* add_pathpoints();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::Vector3 >&
+      pathpoints() const;
+
+  // .NFMsg.FrameCmd FrameCmd = 1;
+  bool has_framecmd() const;
+  private:
+  bool _internal_has_framecmd() const;
+  public:
+  void clear_framecmd();
+  const ::NFMsg::FrameCmd& framecmd() const;
+  ::NFMsg::FrameCmd* release_framecmd();
+  ::NFMsg::FrameCmd* mutable_framecmd();
+  void set_allocated_framecmd(::NFMsg::FrameCmd* framecmd);
+  private:
+  const ::NFMsg::FrameCmd& _internal_framecmd() const;
+  ::NFMsg::FrameCmd* _internal_mutable_framecmd();
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.G2C_MoveCmd)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::Vector3 > pathpoints_;
+  ::NFMsg::FrameCmd* framecmd_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgPreGame_2eproto;
 };
@@ -4743,7 +4912,7 @@ class C2G_AttackCmd :
                &_C2G_AttackCmd_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(C2G_AttackCmd& a, C2G_AttackCmd& b) {
     a.Swap(&b);
@@ -4895,7 +5064,7 @@ class G2C_AttackCmd :
                &_G2C_AttackCmd_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(G2C_AttackCmd& a, G2C_AttackCmd& b) {
     a.Swap(&b);
@@ -5029,7 +5198,7 @@ class C2G_PerformCmd :
                &_C2G_PerformCmd_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(C2G_PerformCmd& a, C2G_PerformCmd& b) {
     a.Swap(&b);
@@ -5174,7 +5343,7 @@ class G2C_PerformCmd :
                &_G2C_PerformCmd_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(G2C_PerformCmd& a, G2C_PerformCmd& b) {
     a.Swap(&b);
@@ -9169,6 +9338,126 @@ inline void C2G_MoveCmd::set_targetposz(float value) {
   // @@protoc_insertion_point(field_set:NFMsg.C2G_MoveCmd.TargetPosZ)
 }
 
+// int32 SceneId = 8;
+inline void C2G_MoveCmd::clear_sceneid() {
+  sceneid_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 C2G_MoveCmd::_internal_sceneid() const {
+  return sceneid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 C2G_MoveCmd::sceneid() const {
+  // @@protoc_insertion_point(field_get:NFMsg.C2G_MoveCmd.SceneId)
+  return _internal_sceneid();
+}
+inline void C2G_MoveCmd::_internal_set_sceneid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  sceneid_ = value;
+}
+inline void C2G_MoveCmd::set_sceneid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_sceneid(value);
+  // @@protoc_insertion_point(field_set:NFMsg.C2G_MoveCmd.SceneId)
+}
+
+// -------------------------------------------------------------------
+
+// G2C_MoveCmd
+
+// .NFMsg.FrameCmd FrameCmd = 1;
+inline bool G2C_MoveCmd::_internal_has_framecmd() const {
+  return this != internal_default_instance() && framecmd_ != nullptr;
+}
+inline bool G2C_MoveCmd::has_framecmd() const {
+  return _internal_has_framecmd();
+}
+inline void G2C_MoveCmd::clear_framecmd() {
+  if (GetArenaNoVirtual() == nullptr && framecmd_ != nullptr) {
+    delete framecmd_;
+  }
+  framecmd_ = nullptr;
+}
+inline const ::NFMsg::FrameCmd& G2C_MoveCmd::_internal_framecmd() const {
+  const ::NFMsg::FrameCmd* p = framecmd_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::FrameCmd*>(
+      &::NFMsg::_FrameCmd_default_instance_);
+}
+inline const ::NFMsg::FrameCmd& G2C_MoveCmd::framecmd() const {
+  // @@protoc_insertion_point(field_get:NFMsg.G2C_MoveCmd.FrameCmd)
+  return _internal_framecmd();
+}
+inline ::NFMsg::FrameCmd* G2C_MoveCmd::release_framecmd() {
+  // @@protoc_insertion_point(field_release:NFMsg.G2C_MoveCmd.FrameCmd)
+  
+  ::NFMsg::FrameCmd* temp = framecmd_;
+  framecmd_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::FrameCmd* G2C_MoveCmd::_internal_mutable_framecmd() {
+  
+  if (framecmd_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::FrameCmd>(GetArenaNoVirtual());
+    framecmd_ = p;
+  }
+  return framecmd_;
+}
+inline ::NFMsg::FrameCmd* G2C_MoveCmd::mutable_framecmd() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.G2C_MoveCmd.FrameCmd)
+  return _internal_mutable_framecmd();
+}
+inline void G2C_MoveCmd::set_allocated_framecmd(::NFMsg::FrameCmd* framecmd) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete framecmd_;
+  }
+  if (framecmd) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      framecmd = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, framecmd, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  framecmd_ = framecmd;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.G2C_MoveCmd.FrameCmd)
+}
+
+// repeated .NFMsg.Vector3 PathPoints = 2;
+inline int G2C_MoveCmd::_internal_pathpoints_size() const {
+  return pathpoints_.size();
+}
+inline int G2C_MoveCmd::pathpoints_size() const {
+  return _internal_pathpoints_size();
+}
+inline ::NFMsg::Vector3* G2C_MoveCmd::mutable_pathpoints(int index) {
+  // @@protoc_insertion_point(field_mutable:NFMsg.G2C_MoveCmd.PathPoints)
+  return pathpoints_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::Vector3 >*
+G2C_MoveCmd::mutable_pathpoints() {
+  // @@protoc_insertion_point(field_mutable_list:NFMsg.G2C_MoveCmd.PathPoints)
+  return &pathpoints_;
+}
+inline const ::NFMsg::Vector3& G2C_MoveCmd::_internal_pathpoints(int index) const {
+  return pathpoints_.Get(index);
+}
+inline const ::NFMsg::Vector3& G2C_MoveCmd::pathpoints(int index) const {
+  // @@protoc_insertion_point(field_get:NFMsg.G2C_MoveCmd.PathPoints)
+  return _internal_pathpoints(index);
+}
+inline ::NFMsg::Vector3* G2C_MoveCmd::_internal_add_pathpoints() {
+  return pathpoints_.Add();
+}
+inline ::NFMsg::Vector3* G2C_MoveCmd::add_pathpoints() {
+  // @@protoc_insertion_point(field_add:NFMsg.G2C_MoveCmd.PathPoints)
+  return _internal_add_pathpoints();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::Vector3 >&
+G2C_MoveCmd::pathpoints() const {
+  // @@protoc_insertion_point(field_list:NFMsg.G2C_MoveCmd.PathPoints)
+  return pathpoints_;
+}
+
 // -------------------------------------------------------------------
 
 // C2G_AttackCmd
@@ -9528,6 +9817,8 @@ inline void G2C_PerformCmd::set_skillid(::PROTOBUF_NAMESPACE_ID::int32 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

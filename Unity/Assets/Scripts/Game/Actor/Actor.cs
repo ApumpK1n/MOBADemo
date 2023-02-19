@@ -9,6 +9,8 @@ namespace Pumpkin
     public class Actor : MonoBehaviour
     {
 
+        public Transform FootNode;
+
         protected ActorStateMachine m_ActorStateMachine;
         protected ActorDataComponet m_ActorDataComponet;
 

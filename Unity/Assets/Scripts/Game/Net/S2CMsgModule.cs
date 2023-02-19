@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using NFrame;
 using NFSDK;
+using Pumpkin.Utility;
 
 namespace Pumpkin
 {
@@ -43,6 +44,7 @@ namespace Pumpkin
         {
             m_NetModule.AddReceiveCallBack((int)NFMsg.EGameMsgID.BattleAttackCmd, OnBattleAttackCmd);
             m_NetModule.AddReceiveCallBack((int)NFMsg.EGameMsgID.BattlePerformCmd, OnBattlePerformCmd);
+            m_NetModule.AddReceiveCallBack((int)NFMsg.EGameMsgID.BattleMoveCmd, OnBattleMovemCmd);
         }
 
         public override void Shut()
@@ -74,6 +76,22 @@ namespace Pumpkin
             performCommand.SkillId = xData.SkillId;
 
             m_CmdDispatcherModule.Handle(performCommand);
+        }
+
+        private void OnBattleMovemCmd(int id, MemoryStream stream)
+        {
+            NFMsg.MsgBase xMsg = NFMsg.MsgBase.Parser.ParseFrom(stream);
+            NFMsg.G2C_MoveCmd xData = NFMsg.G2C_MoveCmd.Parser.ParseFrom(xMsg.MsgData);
+
+            List<UnityEngine.Vector3> points = new List<UnityEngine.Vector3>();
+            foreach(var point in xData.PathPoints)
+            {
+                points.Add(VectorHelper.PB2Unity(point));
+            }
+
+            MoveCommand command = new MoveCommand();
+            command.MovePoints = points;
+            m_CmdDispatcherModule.Handle(command);
         }
     }
 }

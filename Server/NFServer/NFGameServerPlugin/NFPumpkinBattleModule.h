@@ -9,6 +9,7 @@
 #include <iostream>
 #include "NFComm/NFPluginModule/NFIModule.h"
 #include <NFComm/NFPluginModule/NFINetModule.h>
+#include <NFComm/NFNavigationPlugin/NFNavigationModule.h>
 
 
 class NFIPumpkinBattleModule : public NFIModule
@@ -34,9 +35,11 @@ public:
 protected:
     void OnAttackCmd(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
     void OnPerformCmd(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
+    void OnMoveCmd(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
 private:
     NFINetModule* m_pNetModule;
+    NFINavigationModule* m_pNavigationModule;
 };
 
 #endif

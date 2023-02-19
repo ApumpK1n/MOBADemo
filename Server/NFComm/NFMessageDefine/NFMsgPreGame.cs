@@ -86,23 +86,26 @@ namespace NFMsg {
             "ZXJ0eUxpc3QSJwoGcmVjb3JkGAMgASgLMhcuTkZNc2cuT2JqZWN0UmVjb3Jk",
             "TGlzdCIkCgpDcmVhdGVSb29tEhYKDkhvbGRlclBsYXllcklkGAEgASgJIlMK",
             "CEZyYW1lQ21kEg0KBUZyYW1lGAEgASgFEiYKC1N5bmNDbWRUeXBlGAIgASgO",
-            "MhEuTkZNc2cuQWxsQ21kVHlwZRIQCghQbGF5ZXJJZBgDIAEoCSKWAQoLQzJH",
+            "MhEuTkZNc2cuQWxsQ21kVHlwZRIQCghQbGF5ZXJJZBgDIAEoCSKnAQoLQzJH",
             "X01vdmVDbWQSIQoIRnJhbWVDbWQYASABKAsyDy5ORk1zZy5GcmFtZUNtZBIM",
             "CgRQb3NYGAIgASgCEgwKBFBvc1kYAyABKAISDAoEUG9zWhgEIAEoAhISCgpU",
             "YXJnZXRQb3NYGAUgASgCEhIKClRhcmdldFBvc1kYBiABKAISEgoKVGFyZ2V0",
-            "UG9zWhgHIAEoAiJECg1DMkdfQXR0YWNrQ21kEiEKCEZyYW1lQ21kGAEgASgL",
-            "Mg8uTkZNc2cuRnJhbWVDbWQSEAoIVGFyZ2V0SWQYAiABKAkiMgoNRzJDX0F0",
-            "dGFja0NtZBIhCghGcmFtZUNtZBgBIAEoCzIPLk5GTXNnLkZyYW1lQ21kIkQK",
-            "DkMyR19QZXJmb3JtQ21kEiEKCEZyYW1lQ21kGAEgASgLMg8uTkZNc2cuRnJh",
-            "bWVDbWQSDwoHU2tpbGxJZBgCIAEoBSJECg5HMkNfUGVyZm9ybUNtZBIhCghG",
-            "cmFtZUNtZBgBIAEoCzIPLk5GTXNnLkZyYW1lQ21kEg8KB1NraWxsSWQYAiAB",
-            "KAUqWgoMRVNlcnZlclN0YXRlEg0KCUVTVF9DUkFTSBAAEg4KCkVTVF9OQVJN",
-            "QUwQARIMCghFU1RfQlVTWRACEgwKCEVTVF9GSVJFEAMSDwoLRVNUX01BSU5U",
-            "RU4QBCpKCgpFTG9naW5Nb2RlEg0KCUVMTV9MT0dJThAAEhAKDEVMTV9SRUdJ",
-            "U1RFUhABEhsKF0VMTV9BVVRPX1JFR0lTVEVSX0xPR0lOEAIqQAoRUmVxU2Vy",
-            "dmVyTGlzdFR5cGUSFQoRUlNMVF9XT1JMRF9TRVJWRVIQABIUChBSU0xUX0dB",
-            "TUVTX0VSVkVSEAEqOQoKQWxsQ21kVHlwZRIICgROb25lEAASCAoETW92ZRAB",
-            "EgoKBkF0dGFjaxACEgsKB1BlcmZvcm0QA2IGcHJvdG8z"));
+            "UG9zWhgHIAEoAhIPCgdTY2VuZUlkGAggASgFIlQKC0cyQ19Nb3ZlQ21kEiEK",
+            "CEZyYW1lQ21kGAEgASgLMg8uTkZNc2cuRnJhbWVDbWQSIgoKUGF0aFBvaW50",
+            "cxgCIAMoCzIOLk5GTXNnLlZlY3RvcjMiRAoNQzJHX0F0dGFja0NtZBIhCghG",
+            "cmFtZUNtZBgBIAEoCzIPLk5GTXNnLkZyYW1lQ21kEhAKCFRhcmdldElkGAIg",
+            "ASgJIjIKDUcyQ19BdHRhY2tDbWQSIQoIRnJhbWVDbWQYASABKAsyDy5ORk1z",
+            "Zy5GcmFtZUNtZCJECg5DMkdfUGVyZm9ybUNtZBIhCghGcmFtZUNtZBgBIAEo",
+            "CzIPLk5GTXNnLkZyYW1lQ21kEg8KB1NraWxsSWQYAiABKAUiRAoORzJDX1Bl",
+            "cmZvcm1DbWQSIQoIRnJhbWVDbWQYASABKAsyDy5ORk1zZy5GcmFtZUNtZBIP",
+            "CgdTa2lsbElkGAIgASgFKloKDEVTZXJ2ZXJTdGF0ZRINCglFU1RfQ1JBU0gQ",
+            "ABIOCgpFU1RfTkFSTUFMEAESDAoIRVNUX0JVU1kQAhIMCghFU1RfRklSRRAD",
+            "Eg8KC0VTVF9NQUlOVEVOEAQqSgoKRUxvZ2luTW9kZRINCglFTE1fTE9HSU4Q",
+            "ABIQCgxFTE1fUkVHSVNURVIQARIbChdFTE1fQVVUT19SRUdJU1RFUl9MT0dJ",
+            "ThACKkAKEVJlcVNlcnZlckxpc3RUeXBlEhUKEVJTTFRfV09STERfU0VSVkVS",
+            "EAASFAoQUlNMVF9HQU1FU19FUlZFUhABKjkKCkFsbENtZFR5cGUSCAoETm9u",
+            "ZRAAEggKBE1vdmUQARIKCgZBdHRhY2sQAhILCgdQZXJmb3JtEANiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NFMsg.NFDefineReflection.Descriptor, global::NFMsg.NFMsgBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NFMsg.EServerState), typeof(global::NFMsg.ELoginMode), typeof(global::NFMsg.ReqServerListType), typeof(global::NFMsg.AllCmdType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -130,7 +133,8 @@ namespace NFMsg {
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.RoleDataPack), global::NFMsg.RoleDataPack.Parser, new[]{ "Id", "Property", "Record" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.CreateRoom), global::NFMsg.CreateRoom.Parser, new[]{ "HolderPlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.FrameCmd), global::NFMsg.FrameCmd.Parser, new[]{ "Frame", "SyncCmdType", "PlayerId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.C2G_MoveCmd), global::NFMsg.C2G_MoveCmd.Parser, new[]{ "FrameCmd", "PosX", "PosY", "PosZ", "TargetPosX", "TargetPosY", "TargetPosZ" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.C2G_MoveCmd), global::NFMsg.C2G_MoveCmd.Parser, new[]{ "FrameCmd", "PosX", "PosY", "PosZ", "TargetPosX", "TargetPosY", "TargetPosZ", "SceneId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.G2C_MoveCmd), global::NFMsg.G2C_MoveCmd.Parser, new[]{ "FrameCmd", "PathPoints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.C2G_AttackCmd), global::NFMsg.C2G_AttackCmd.Parser, new[]{ "FrameCmd", "TargetId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.G2C_AttackCmd), global::NFMsg.G2C_AttackCmd.Parser, new[]{ "FrameCmd" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.C2G_PerformCmd), global::NFMsg.C2G_PerformCmd.Parser, new[]{ "FrameCmd", "SkillId" }, null, null, null, null),
@@ -5326,6 +5330,7 @@ namespace NFMsg {
       targetPosX_ = other.targetPosX_;
       targetPosY_ = other.targetPosY_;
       targetPosZ_ = other.targetPosZ_;
+      sceneId_ = other.sceneId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5411,6 +5416,17 @@ namespace NFMsg {
       }
     }
 
+    /// <summary>Field number for the "SceneId" field.</summary>
+    public const int SceneIdFieldNumber = 8;
+    private int sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as C2G_MoveCmd);
@@ -5431,6 +5447,7 @@ namespace NFMsg {
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TargetPosX, other.TargetPosX)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TargetPosY, other.TargetPosY)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TargetPosZ, other.TargetPosZ)) return false;
+      if (SceneId != other.SceneId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5444,6 +5461,7 @@ namespace NFMsg {
       if (TargetPosX != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TargetPosX);
       if (TargetPosY != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TargetPosY);
       if (TargetPosZ != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TargetPosZ);
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5485,6 +5503,10 @@ namespace NFMsg {
         output.WriteRawTag(61);
         output.WriteFloat(TargetPosZ);
       }
+      if (SceneId != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(SceneId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5513,6 +5535,9 @@ namespace NFMsg {
       }
       if (TargetPosZ != 0F) {
         size += 1 + 4;
+      }
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SceneId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5548,6 +5573,9 @@ namespace NFMsg {
       }
       if (other.TargetPosZ != 0F) {
         TargetPosZ = other.TargetPosZ;
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5591,6 +5619,165 @@ namespace NFMsg {
             TargetPosZ = input.ReadFloat();
             break;
           }
+          case 64: {
+            SceneId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class G2C_MoveCmd : pb::IMessage<G2C_MoveCmd> {
+    private static readonly pb::MessageParser<G2C_MoveCmd> _parser = new pb::MessageParser<G2C_MoveCmd>(() => new G2C_MoveCmd());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<G2C_MoveCmd> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[25]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public G2C_MoveCmd() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public G2C_MoveCmd(G2C_MoveCmd other) : this() {
+      frameCmd_ = other.frameCmd_ != null ? other.frameCmd_.Clone() : null;
+      pathPoints_ = other.pathPoints_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public G2C_MoveCmd Clone() {
+      return new G2C_MoveCmd(this);
+    }
+
+    /// <summary>Field number for the "FrameCmd" field.</summary>
+    public const int FrameCmdFieldNumber = 1;
+    private global::NFMsg.FrameCmd frameCmd_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.FrameCmd FrameCmd {
+      get { return frameCmd_; }
+      set {
+        frameCmd_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "PathPoints" field.</summary>
+    public const int PathPointsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::NFMsg.Vector3> _repeated_pathPoints_codec
+        = pb::FieldCodec.ForMessage(18, global::NFMsg.Vector3.Parser);
+    private readonly pbc::RepeatedField<global::NFMsg.Vector3> pathPoints_ = new pbc::RepeatedField<global::NFMsg.Vector3>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::NFMsg.Vector3> PathPoints {
+      get { return pathPoints_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as G2C_MoveCmd);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(G2C_MoveCmd other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(FrameCmd, other.FrameCmd)) return false;
+      if(!pathPoints_.Equals(other.pathPoints_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (frameCmd_ != null) hash ^= FrameCmd.GetHashCode();
+      hash ^= pathPoints_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (frameCmd_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(FrameCmd);
+      }
+      pathPoints_.WriteTo(output, _repeated_pathPoints_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (frameCmd_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FrameCmd);
+      }
+      size += pathPoints_.CalculateSize(_repeated_pathPoints_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(G2C_MoveCmd other) {
+      if (other == null) {
+        return;
+      }
+      if (other.frameCmd_ != null) {
+        if (frameCmd_ == null) {
+          FrameCmd = new global::NFMsg.FrameCmd();
+        }
+        FrameCmd.MergeFrom(other.FrameCmd);
+      }
+      pathPoints_.Add(other.pathPoints_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (frameCmd_ == null) {
+              FrameCmd = new global::NFMsg.FrameCmd();
+            }
+            input.ReadMessage(FrameCmd);
+            break;
+          }
+          case 18: {
+            pathPoints_.AddEntriesFrom(input, _repeated_pathPoints_codec);
+            break;
+          }
         }
       }
     }
@@ -5605,7 +5792,7 @@ namespace NFMsg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[25]; }
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5768,7 +5955,7 @@ namespace NFMsg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[26]; }
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5903,7 +6090,7 @@ namespace NFMsg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[27]; }
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6066,7 +6253,7 @@ namespace NFMsg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[28]; }
+      get { return global::NFMsg.NFMsgPreGameReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

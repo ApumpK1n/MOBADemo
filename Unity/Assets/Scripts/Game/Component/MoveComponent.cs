@@ -108,5 +108,52 @@ namespace Pumpkin
                 transform.position = viewPosition;
             }
         }
+
+        public void StartNavigate(List<Vector3> points, ActorTransformData transformData)
+        {
+            //先停止协程
+            StopCoroutine();
+            StartCoroutine(points, transformData);
+        }
+
+        private void StartCoroutine(List<Vector3> points, ActorTransformData transformData)
+        {
+            m_NavigateCoroutine = StartCoroutine(NavigateCoroutine(points, transformData));
+        }
+
+        private IEnumerator NavigateCoroutine(List<Vector3> points, ActorTransformData transformData)
+        {
+            float timer = 0f;
+            int index = 0;
+            while (true)
+            {
+                // 如果抵达了目标范围，强行让客户端停止
+                if (Vector3.Distance(transformData.Position, points[points.Count - 1]) <= 0.0001f)
+                {
+                    StopNavigate();
+                    yield break;
+                }
+                if (index >= points.Count)
+                {
+                    yield break;
+                }
+
+                Vector3 target = points[index]; ;
+
+
+                timer += Time.deltaTime;
+                Vector3 viewPosition = Vector3.Lerp(transformData.Position, target, timer / 1.0f);
+                if (timer >= 1.0f)
+                {
+                    transformData.Position = target;
+                    viewPosition = target;
+                    timer = 0;
+                    ++index;
+                }
+
+                transformData.ViewPosition = viewPosition;
+                transform.position = viewPosition;
+            }
+        }
     }
 }

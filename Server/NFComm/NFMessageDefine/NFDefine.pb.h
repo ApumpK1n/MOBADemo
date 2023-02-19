@@ -197,12 +197,13 @@ enum EGameMsgID : int {
   BATTLE_CLIENT_CMD = 1001,
   BATTLE_ATTACK_CMD = 1002,
   BATTLE_PERFORM_CMD = 1003,
+  BATTLE_MOVE_CMD = 1004,
   EGameMsgID_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   EGameMsgID_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool EGameMsgID_IsValid(int value);
 constexpr EGameMsgID EGameMsgID_MIN = UNKNOW;
-constexpr EGameMsgID EGameMsgID_MAX = BATTLE_PERFORM_CMD;
+constexpr EGameMsgID EGameMsgID_MAX = BATTLE_MOVE_CMD;
 constexpr int EGameMsgID_ARRAYSIZE = EGameMsgID_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EGameMsgID_descriptor();
