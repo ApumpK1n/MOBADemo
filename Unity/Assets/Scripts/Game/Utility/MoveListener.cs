@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Pumpkin.Utility
 {
-    public class MoveListener : MonoBehaviour
+    public class MoveListener : SingletonBehaviour<MoveListener>
     {
 
         private CommandQueueModule m_CommandQueueModule;
 
-
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             m_CommandQueueModule = GameInit.Instance.PluginManager.FindModule<CommandQueueModule>();
         }
 
@@ -36,13 +36,32 @@ namespace Pumpkin.Utility
                     moveCommand.PlayerId = "233";
                     moveCommand.SyncCmdType = NFMsg.AllCmdType.Move;
 
-                    moveCommand.TargetPos = NavMeshHelper.SamplePosition(targetPos);
-                    moveCommand.Pos = NavMeshHelper.SamplePosition(hero.FootNode.position);
+                    moveCommand.TargetPos = targetPos;//NavMeshHelper.SamplePosition(targetPos);
+                    moveCommand.Pos = hero.FootNode.position; NavMeshHelper.SamplePosition(hero.FootNode.position);
                     moveCommand.SceneId = 1001;
 
                     m_CommandQueueModule.AddCmdToSendQueue(moveCommand);
                 }
             }
         }
+#if UNITY_EDITOR
+        private Vector3[] m_DebugPoints;
+
+        public void SetDebugPoints(Vector3[] points)
+        {
+            m_DebugPoints = points;
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (m_DebugPoints == null) return;
+            Gizmos.color = Color.red;
+
+            for(int i=0; i< m_DebugPoints.Length; i++)
+            {
+                Gizmos.DrawSphere(m_DebugPoints[i], 1f);
+            }
+        }
+#endif
     }
 }

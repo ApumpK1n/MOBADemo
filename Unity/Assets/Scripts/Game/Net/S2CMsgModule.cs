@@ -83,14 +83,17 @@ namespace Pumpkin
             NFMsg.MsgBase xMsg = NFMsg.MsgBase.Parser.ParseFrom(stream);
             NFMsg.G2C_MoveCmd xData = NFMsg.G2C_MoveCmd.Parser.ParseFrom(xMsg.MsgData);
 
-            List<UnityEngine.Vector3> points = new List<UnityEngine.Vector3>();
+            UnityEngine.Vector3[] points = new UnityEngine.Vector3[xData.PathPoints.Count];
+            int index = 0;
             foreach(var point in xData.PathPoints)
             {
-                points.Add(VectorHelper.PB2Unity(point));
+                points[index]= VectorHelper.PB2Unity(point);
+                index++;
             }
 
             MoveCommand command = new MoveCommand();
             command.MovePoints = points;
+            command.SyncCmdType = xData.FrameCmd.SyncCmdType;
             m_CmdDispatcherModule.Handle(command);
         }
     }

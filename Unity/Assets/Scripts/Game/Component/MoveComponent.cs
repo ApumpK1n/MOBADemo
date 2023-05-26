@@ -15,6 +15,8 @@ namespace Pumpkin
 
         private Coroutine m_NavigateCoroutine;
 
+        private Action m_OnEndNavigate;
+
         public class NavigationData
         {
             public Vector3 Position;
@@ -42,11 +44,6 @@ namespace Pumpkin
             }
         }
 
-        private void StartCoroutine(NavigationData navigationData, ActorTransformData transformData)
-        {
-            m_NavigateCoroutine = StartCoroutine(NavigateCoroutine(navigationData, transformData));
-        }
-
         public bool FindNavigatePath(NavigationData navigationData)
         {
             if (Vector3.Distance(navigationData.Position, navigationData.TargetPosition) <= 0.0001f)
@@ -62,98 +59,58 @@ namespace Pumpkin
             return true;
         }
 
-        public void StartNavigate(NavigationData navigationData, ActorTransformData transformData)
-        { 
-            //先停止协程
-            StopCoroutine();
-            StartCoroutine(navigationData, transformData);
-        }
-
         public void StopNavigate()
         {
             StopCoroutine();
         }
 
-        private IEnumerator NavigateCoroutine(NavigationData navigationData, ActorTransformData transformData)
-        {
-            float timer = 0f;
-            uint index = 0;
-            while (true)
-            {
-                // 如果抵达了目标范围，强行让客户端停止
-                if (Vector3.Distance(transformData.Position, navigationData.TargetPosition) <= 0.0001f)
-                {
-                    StopNavigate();
-                    yield break;
-                }
-                if (index >= m_Path.corners.Length)
-                {
-                    yield break;
-                }
-
-                Vector3 target = m_Path.corners[index];
-
-
-                timer += Time.deltaTime;
-                Vector3 viewPosition = Vector3.Lerp(transformData.Position, target, timer / navigationData.StepTime);
-                if (timer >= navigationData.StepTime)
-                {
-                    transformData.Position = target;
-                    viewPosition = target;
-                    timer = 0;
-                    ++index;
-                }
-                
-                transformData.ViewPosition = viewPosition;
-                transform.position = viewPosition;
-            }
-        }
-
-        public void StartNavigate(List<Vector3> points, ActorTransformData transformData)
+        public void StartNavigate(Vector3[] points, ActorTransformData transformData, Action onEnd)
         {
             //先停止协程
             StopCoroutine();
+            m_OnEndNavigate = onEnd;
             StartCoroutine(points, transformData);
         }
 
-        private void StartCoroutine(List<Vector3> points, ActorTransformData transformData)
+        private void StartCoroutine(Vector3[] points, ActorTransformData transformData)
         {
             m_NavigateCoroutine = StartCoroutine(NavigateCoroutine(points, transformData));
         }
 
-        private IEnumerator NavigateCoroutine(List<Vector3> points, ActorTransformData transformData)
+        private IEnumerator NavigateCoroutine(Vector3[] points, ActorTransformData transformData)
         {
-            float timer = 0f;
             int index = 0;
-            while (true)
+            Vector3 start = transformData.ViewPosition;
+            while (index < points.Length)
             {
                 // 如果抵达了目标范围，强行让客户端停止
-                if (Vector3.Distance(transformData.Position, points[points.Count - 1]) <= 0.0001f)
+                if (Vector3.Distance(start, points[points.Length - 1]) <= 0.0001f)
                 {
                     StopNavigate();
                     yield break;
                 }
-                if (index >= points.Count)
+
+                float timer = 0f;
+                Vector3 target = points[index];
+
+                if (!(Vector3.Distance(start, target) <= 0.01f)) 
                 {
-                    yield break;
+                    while (timer <= 1.0f) // TODO: 根据移速来算
+                    {
+                        timer += Time.deltaTime;
+                        Vector3 viewPosition = Vector3.Lerp(start, target, timer / 1.0f);
+
+                        transformData.ViewPosition = viewPosition;
+                        yield return null;
+                    }
                 }
-
-                Vector3 target = points[index]; ;
-
-
-                timer += Time.deltaTime;
-                Vector3 viewPosition = Vector3.Lerp(transformData.Position, target, timer / 1.0f);
-                if (timer >= 1.0f)
-                {
-                    transformData.Position = target;
-                    viewPosition = target;
-                    timer = 0;
-                    ++index;
-                }
-
-                transformData.ViewPosition = viewPosition;
-                transform.position = viewPosition;
+               
+                transformData.ViewPosition = target;
+                index++;
+                start = target;
             }
+            m_OnEndNavigate?.Invoke();
+            m_OnEndNavigate = null;
         }
     }
 }

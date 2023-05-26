@@ -26,10 +26,5 @@ namespace Pumpkin
             };
             EventManager.Instance.Notification(ComponentEvent.AnimationEvent, this, args);
         }
-
-        public override void OnEndExecute()
-        {
-
-        }
     }
 }

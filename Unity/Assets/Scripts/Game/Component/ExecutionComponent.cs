@@ -8,17 +8,23 @@ namespace Pumpkin
     {
         public ExecutionObject ExecutionObject { get; private set; }
 
-        private List<ExecutionClipComponent> m_ExecutionClipComponents = new List<ExecutionClipComponent>();
+        private List<ExecutionClipComponent> m_ExecutionClipComponents;
+        private List<ExecutionClipComponent> m_ReadyExecuteClips;
         private float m_Timer;
         private bool m_IsExecuting = false;
-        private int m_Index;
 
         public override void Awake(object initData)
         {
             ExecutionObject = initData as ExecutionObject;
+
+            int length = ExecutionObject.ExecuteClips.Count;
+            m_ExecutionClipComponents = new List<ExecutionClipComponent>(length);
+            m_ReadyExecuteClips = new List<ExecutionClipComponent>(length);
+
             foreach (var clip in ExecutionObject.ExecuteClips)
             {
                 ExecutionClipComponent clipComponent = AddComponent<ExecutionClipComponent>(clip.Name, clip);
+                clipComponent.ExecutedAction += EndClipExecute;
                 m_ExecutionClipComponents.Add(clipComponent);
             }
         }
@@ -33,7 +39,9 @@ namespace Pumpkin
             m_Timer = 0;
             m_IsExecuting = true;
 
-            foreach (var clipComponent in m_ExecutionClipComponents)
+            m_ReadyExecuteClips.AddRange(m_ExecutionClipComponents);
+
+            foreach (var clipComponent in m_ReadyExecuteClips)
             {
                 clipComponent.Enable = true;
             }
@@ -43,7 +51,7 @@ namespace Pumpkin
 
         private void ExecuteClip()
         {
-            foreach (var clipComponent in m_ExecutionClipComponents)
+            foreach (var clipComponent in m_ReadyExecuteClips)
             {
                 if (clipComponent.Executing || !clipComponent.Enable) continue;
                 if (m_Timer < clipComponent.ExecuteClipData.StartTime) continue;
@@ -52,13 +60,13 @@ namespace Pumpkin
             }
         }
 
-        public void EndExecute()
+        public override void EndExecute()
         {
             m_IsExecuting = false;
             m_Timer = 0;
             foreach (var clipComponent in m_ExecutionClipComponents)
             {
-                clipComponent.OnEndExecute();
+                clipComponent.EndExecute();
             }
         }
 
@@ -67,7 +75,7 @@ namespace Pumpkin
             if (!m_IsExecuting) return;
             m_Timer += delta;
 
-            if (m_Timer >= ExecutionObject.TotalTime)
+            if (m_Timer >= ExecutionObject.TotalTime || m_ReadyExecuteClips.Count <= 0)
             {
                 EndExecute();
             }
@@ -75,6 +83,11 @@ namespace Pumpkin
             {
                 ExecuteClip();
             }
+        }
+
+        public void EndClipExecute(ExecutionClipComponent clip)
+        {
+            m_ReadyExecuteClips.Remove(clip);
         }
     }
 }

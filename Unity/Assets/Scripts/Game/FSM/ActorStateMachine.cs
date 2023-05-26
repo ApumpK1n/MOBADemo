@@ -31,6 +31,7 @@ namespace Pumpkin
             {
                 new HeroIdleState<ActorStateType>(ActorStateType.Idle, this),
                 new HeroAttackState<ActorStateType>(ActorStateType.Attack, this),
+                new HeroRunState<ActorStateType>(ActorStateType.Run, this),
             };
             m_StateMachine = new StateMachine<ActorStateType>(stateList.ToArray(), ActorStateType.Idle);
         }

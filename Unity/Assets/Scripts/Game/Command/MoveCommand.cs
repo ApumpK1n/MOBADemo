@@ -26,6 +26,6 @@ namespace Pumpkin
         public float RotZ;
         public float RotW;
 
-        public List<Vector3> MovePoints;
+        public Vector3[] MovePoints;
     }
 }

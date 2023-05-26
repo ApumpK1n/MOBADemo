@@ -7,8 +7,9 @@ namespace Pumpkin
     public class ExecutionClipComponent : Component
     {
         public ExecuteClipData ExecuteClipData { get; set; }
-        private Component m_ExecuteComponent;
+        public event Action<ExecutionClipComponent> ExecutedAction;
         public bool Executing;
+        private Component m_ExecuteComponent;
         private float m_timer;
 
         public override void Awake(object initData)
@@ -30,11 +31,11 @@ namespace Pumpkin
             m_ExecuteComponent.Execute();
         }
 
-        public override void OnEndExecute()
+        public override void EndExecute()
         {
             Executing = false;
             Enable = false;
-            m_ExecuteComponent.OnEndExecute();
+            m_ExecuteComponent.EndExecute();
         }
 
         public override void PreUpdate(float delta)
@@ -43,7 +44,8 @@ namespace Pumpkin
             m_timer += delta;
             if (m_timer >= ExecuteClipData.Duration)
             {
-                OnEndExecute();
+                Executing = false;
+                ExecutedAction?.Invoke(this);
             }
         }
     }

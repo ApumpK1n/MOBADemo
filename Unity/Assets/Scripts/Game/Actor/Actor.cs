@@ -25,6 +25,8 @@ namespace Pumpkin
             AddActorData();
             AddActorAbility();
             AddActorComponent();
+
+            OnAwake();
         }
 
         protected virtual void AddActorData()
@@ -42,6 +44,11 @@ namespace Pumpkin
             m_FightAbility = Ability.Create<FightAbility>();
 
             LoadSkillWithCodeBind("SkillConfigs/Skill_1001_Q", KeyCode.Q);
+        }
+
+        protected virtual void OnAwake()
+        {
+
         }
 
         protected void AddActorData<T>(T data) where T : ActorData
@@ -77,7 +84,7 @@ namespace Pumpkin
 
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             m_FightAbility.Update(Time.deltaTime);
         }

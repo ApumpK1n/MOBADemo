@@ -29,7 +29,7 @@ namespace Pumpkin
 
         }
 
-        public virtual void OnEndExecute()
+        public virtual void EndExecute()
         {
 
         }
